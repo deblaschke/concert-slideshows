@@ -1,0 +1,44 @@
+body {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-size: 100% 100%;
+  background-position: center bottom;
+  background-attachment: fixed;
+}
+
+#outerTable td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 5px;
+}
+
+#innerTable td {
+  text-align: center;
+  vertical-align: middle;
+/*width: 674px; Now calculated dynamically to simulate responsiveness
+  height: 674px;*/
+  border-style: groove;
+  border-width: 3px;
+/*box-shadow: 5px 5px 5px #444444; Not needed for dark background*/
+  background-color: #000000;
+}
+
+img.concertPix {
+  display: block;
+  margin: auto;
+}
+
+button {
+  font-family: Arial;
+  vertical-align: top;
+  width: 2em;
+  height: 2em;
+}
+
+#slideName {
+  text-align: center;
+  vertical-align: middle;
+  display: block;
+  text-wrap: wrap;
+  background-color: rgb(0,0,0,0.75);
+}
