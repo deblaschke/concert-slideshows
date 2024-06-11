@@ -1,383 +1,346 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8">
     <base href="..">
     <title>2016-17 Concerts</title>
-    <link type="text/css" rel="stylesheet" href="css/slideshow.css"></link>
-    <!-- This must be included before slideshow.js or default audio will play -->
-    <script>
-      var mapSlideToAudio = new Map([
-        ["I1130302", "media/dalewatson.mp3"],       //  3 Everybody's Somebody In Luckenbach Texas
-        ["I1130352", "media/boland.mp3"],           //  3 Comal County Blue
-        ["I1130382", "media/skynyrd.mp3"],          // 18 Free Bird
-        ["I1130660", "media/tylerbryant2.mp3"],     //  5 Ride
-        ["I1130701", "media/acdc.mp3"],             // 20 Back in Black
-        ["I1140652", "media/chic.mp3"],             // 11 Le Freak
-        ["I1140718", "media/duran.mp3"],            // 20 Ordinary World
-        ["I1140914", "media/steelheart.mp3"],       //  6 I'll Never Let You Go
-        ["I1140960", "media/greatwhite.mp3"],       //  7 Rock Me
-        ["I1150013", "media/firehouse.mp3"],        //  6 Don't Treat Me Bad
-        ["I1150078", "media/warrant.mp3"],          //  9 Heaven
-        ["I1150152", "media/ratt.mp3"],             //  8 Round and Round
-        ["I1150223", "media/bmb.mp3"],              //  9 Every Rose Has Its Thorn
-        ["I1150640", "media/britfloyd3.mp3"],       // 12 On the Turning Away
-        ["I1150783", "media/bsc.mp3"],              //  5 White Trash Millionaire
-        ["I1150813", "media/whiskey.mp3"],          //  6 Gasoline
-        ["I1150881", "media/halestorm.mp3"],        //  9 I Miss the Misery
-        ["I1150960", "media/shinedown.mp3"],        // 19 Second Chance
-        ["20161117212322", "media/parsons.mp3"],    //  1 Genesis Ch. 1. V.32
-        ["N1050042", "media/fitz.mp3"],             //  5 The Walker
-        ["N1050085", "media/blueoct.mp3"],          //  7 Daylight
-        ["N1050156", "media/train.mp3"],            // 12 Hey, Soul Sister
-        ["20170610201200", "media/30seconds2.mp3"], //  3 From Yesterday
-        ["20170610211852", "media/muse3.mp3"],      //  8 Knights of Cydonia
-        ["M1010457", "media/waters2.mp3"],          // 18 Another Brick in the Wall, Part 2
-        ["N1080136", "media/felder.mp3"],           //  9 Heavy Metal (Takin' A Ride)
-        ["N1080216", "media/styx3.mp3"],            // 18 Lady
-        ["N1080356", "media/reo3.mp3"],             // 18 That Ain't Love
-        ["N1080797", "media/stpaul.mp3"],           //  2 Apollo
-        ["N1080817", "media/halloates.mp3"]         // 18 Maneater
-      ]);
-    </script>
+    <link rel="stylesheet" href="css/slideshow.css">
     <script src="js/slideshow.js"></script>
     <script src="js/description.js"></script>
   </head>
-  <body background="images/background.jpg" bgcolor="#000000" text="#FFFFFF">
-    <center>
-      <table id="outerTable">
-        <tr>
-          <td>
-            <font size="+2"><b>2016-17 Concerts</b></font>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <table id="innerTable"><tr><td>
-              <img class="concertPix" src="2016-17/title.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160128_I1130302-Dale_Watson_and_His_Lone_Stars@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160128_I1130312C-Dale_Watson_and_His_Lone_Stars@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160128_I1130316-Dale_Watson_and_His_Lone_Stars@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160128_I1130352C-Jason_Boland_and_the_Stragglers@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160128_I1130362-Jason_Boland_and_the_Stragglers@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160128_I1130368-Jason_Boland_and_the_Stragglers@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160128_I1130382-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160128_I1130387-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160128_I1130389-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160128_I1130393-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160128_I1130404-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160128_I1130406-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160128_I1130408-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160128_I1130421C-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160128_I1130425C-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160128_I1130443-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160128_I1130456-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160128_I1130471-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160128_I1130502-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160128_I1130512-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160128_I1130524-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160128_I1130533-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160128_I1130543-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160128_I1130549-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160226_I1130660-Tyler_Bryant_[amp]_The_Shakedown@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160226_I1130662-Tyler_Bryant_[amp]_The_Shakedown@Toyota_Center_in_Houston_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160226_I1130667-Tyler_Bryant_[amp]_The_Shakedown@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160226_I1130671-Tyler_Bryant_[amp]_The_Shakedown@Toyota_Center_in_Houston_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160226_I1130673-Tyler_Bryant_[amp]_The_Shakedown@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160226_I1130701-AC[sol]DC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160226_I1130764-AC[sol]DC@Toyota_Center_in_Houston_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160226_I1130770-AC[sol]DC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160226_I1130784-AC[sol]DC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160226_I1130786-AC[sol]DC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160226_I1130790-AC[sol]DC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160226_I1130806-AC[sol]DC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160226_I1130822-AC[sol]DC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160226_I1130832C-AC[sol]DC@Toyota_Center_in_Houston_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160226_I1130847C-AC[sol]DC@Toyota_Center_in_Houston_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160226_I1130883C-AC[sol]DC@Toyota_Center_in_Houston_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160226_I1130885-AC[sol]DC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160226_I1130900-AC[sol]DC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160226_I1130914C-AC[sol]DC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160226_I1130951-AC[sol]DC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160226_I1130981-AC[sol]DC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160226_I1130993C-AC[sol]DC@Toyota_Center_in_Houston_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160226_I1130994-AC[sol]DC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160226_I1140016-AC[sol]DC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160226_I1140020C-AC[sol]DC@Toyota_Center_in_Houston_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140652-Chic_featuring_Nile_Rodgers@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140653C-Chic_featuring_Nile_Rodgers@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140658-Chic_featuring_Nile_Rodgers@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140667-Chic_featuring_Nile_Rodgers@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140668-Chic_featuring_Nile_Rodgers@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140670-Chic_featuring_Nile_Rodgers@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140674-Chic_featuring_Nile_Rodgers@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140682-Chic_featuring_Nile_Rodgers@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140692-Chic_featuring_Nile_Rodgers@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140696-Chic_featuring_Nile_Rodgers@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140701-Chic_featuring_Nile_Rodgers@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140718-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140724-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140729-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140733-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140736-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140737-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140744-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140753-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140767-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140770-Duran_Duran_and_Nile_Rodgers@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140773C-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140788-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140809-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140827-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140836-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140845-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140862-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140875-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140877-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160423_I1140878-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1140914-Steelheart@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1140919-Steelheart@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1140927-Steelheart@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1140932-Steelheart@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1140939-Steelheart@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1140943-Steelheart@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1140960-Jack_Russell's_Great_White@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1140963-Jack_Russell's_Great_White@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1140974-Jack_Russell's_Great_White@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1140989-Jack_Russell's_Great_White@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1140990-Jack_Russell's_Great_White@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1140994-Jack_Russell's_Great_White@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1140997-Jack_Russell's_Great_White@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150013-FireHouse@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150027-FireHouse@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150032-FireHouse@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150056-FireHouse@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150062-FireHouse@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150064-Warrant@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150078-Warrant@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150084-Warrant@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150088-Warrant@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150093-Warrant@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150096-Warrant@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150102-Warrant@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150115C-Warrant@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150119C-Warrant@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150121-Warrant@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150152-Ratt@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150155-Ratt@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150158-Ratt@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150163C-Ratt@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150174C-Ratt@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150184-Ratt@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150187-Ratt@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150190-Ratt@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150223-Bret_Michaels_Band@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150232C-Bret_Michaels_Band@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150238-Bret_Michaels_Band@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150247-Bret_Michaels_Band@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150259-Bret_Michaels_Band@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150263C-Bret_Michaels_Band@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150272-Bret_Michaels_Band@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150285-Bret_Michaels_Band@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160424_I1150291-Bret_Michaels_Band@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160629_I1150640-Brit_Floyd@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160629_I1150641-Brit_Floyd@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160629_I1150644-Brit_Floyd@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160629_I1150657-Brit_Floyd@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160629_I1150668-Brit_Floyd@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160629_I1150687-Brit_Floyd@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160629_I1150694-Brit_Floyd@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160629_I1150715-Brit_Floyd@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160629_I1150718-Brit_Floyd@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160629_I1150734-Brit_Floyd@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160629_I1150745-Brit_Floyd@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160629_I1150748-Brit_Floyd@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150783-Black_Stone_Cherry@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150790-Black_Stone_Cherry@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150797-Black_Stone_Cherry@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150800-Black_Stone_Cherry@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150810-Black_Stone_Cherry@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150813-Whiskey_Myers@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150848-Whiskey_Myers@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150853-Whiskey_Myers@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150862-Whiskey_Myers@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150868-Whiskey_Myers@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150873-Whiskey_Myers@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150881-Halestorm@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150884-Halestorm@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150885-Halestorm@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150890C-Halestorm@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150900-Halestorm@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150908-Halestorm@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150920-Halestorm@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150929-Halestorm@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150932-Halestorm@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150960-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150974-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150978-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150980-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150981-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150983-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150990-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1150996-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1160000-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1160010-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1160017-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1160022-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1160030-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1160037C-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1160039-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1160041-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1160043-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1160046-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20160731_I1160061-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20161117T212322-Alan_Parsons_@Paramount_Theater_in_Austin_TX.jpg" style="width:95%;height:53%;">
-              <img class="concertPix" src="2016-17/20161214_N1050042-Fitz_and_the_Tantrums@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20161214_N1050043-Fitz_and_the_Tantrums@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20161214_N1050053-Fitz_and_the_Tantrums@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20161214_N1050067-Fitz_and_the_Tantrums@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20161214_N1050074-Fitz_and_the_Tantrums@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20161214_N1050085-Blue_October@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20161214_N1050103-Blue_October@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20161214_N1050104-Blue_October@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20161214_N1050118-Blue_October@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20161214_N1050120-Blue_October@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20161214_N1050124-Blue_October@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20161214_N1050139-Blue_October@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20161214_N1050156-Train@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20161214_N1050177-Train@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20161214_N1050180-Train@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20161214_N1050187-Train@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20161214_N1050188-Train@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20161214_N1050189-Train@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20161214_N1050196-Train@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20161214_N1050198-Train@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20161214_N1050209-Train@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20161214_N1050251-Train@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20161214_N1050252-Train@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20161214_N1050260C-Train@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20170610T201200-30_Seconds_to_Mars@Austin360_Amphitheater_in_Austin_TX.jpg" style="height:95%;width:53%;">
-              <img class="concertPix" src="2016-17/20170610T201859-30_Seconds_to_Mars@Austin360_Amphitheater_in_Austin_TX.jpg" style="width:95%;height:53%;">
-              <img class="concertPix" src="2016-17/20170610T201952-30_Seconds_to_Mars@Austin360_Amphitheater_in_Austin_TX.jpg" style="width:95%;height:53%;">
-              <img class="concertPix" src="2016-17/20170610T211852-Muse@Austin360_Amphitheater_in_Austin_TX.jpg" style="width:95%;height:53%;">
-              <img class="concertPix" src="2016-17/20170610T215125-Muse@Austin360_Amphitheater_in_Austin_TX.jpg" style="width:95%;height:53%;">
-              <img class="concertPix" src="2016-17/20170610T215618-Muse@Austin360_Amphitheater_in_Austin_TX.jpg" style="width:95%;height:53%;">
-              <img class="concertPix" src="2016-17/20170610T215634-Muse@Austin360_Amphitheater_in_Austin_TX.jpg" style="width:95%;height:53%;">
-              <img class="concertPix" src="2016-17/20170610T222153-Muse@Austin360_Amphitheater_in_Austin_TX.jpg" style="width:95%;height:53%;">
-              <img class="concertPix" src="2016-17/20170610T223121-Muse@Austin360_Amphitheater_in_Austin_TX.jpg" style="width:95%;height:53%;">
-              <img class="concertPix" src="2016-17/20170610T223346-Muse@Austin360_Amphitheater_in_Austin_TX.jpg" style="width:95%;height:53%;">
-              <img class="concertPix" src="2016-17/20170610T223420-Muse@Austin360_Amphitheater_in_Austin_TX.jpg" style="width:95%;height:53%;">
-              <img class="concertPix" src="2016-17/20170706_M1010457-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170706_M1010464-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170706_M1010467-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170706_M1010479-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170706_M1010482-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170706_M1010494-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170706_M1010495-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170706_M1010507-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170706_M1010512-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170706_M1010519-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170706_M1010524-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170706_M1010527-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170706_M1010534-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170706_M1010536-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170706_M1010541-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170706_M1010554-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170706_M1010563-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170706_M1010566-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080136-Don_Felder@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080137C-Don_Felder@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080150-Don_Felder@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080155-Don_Felder@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080164-Don_Felder@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080165-Don_Felder@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080174-Don_Felder_and_Tommy_Shaw@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080178-Don_Felder_and_Tommy_Shaw@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080183-Don_Felder@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080216C-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080220-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080227-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080228-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080249-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080251C-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080259-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080263-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080265-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080272C-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080280-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080296-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080302C-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080307C-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080325-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080341-Styx@H-E-B_Center_in_Cedar_Park_TX`.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080344-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080346-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080356C-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080369-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080371-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080376-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080378-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080381-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080388-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080391-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080397-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080409-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080414-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080416-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080427C-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080431-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080440-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080444C-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080454-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20170731_N1080464-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170922_N1080797-St_Paul_And_The_Broken_Bones@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170922_N1080804-St_Paul_And_The_Broken_Bones@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170922_N1080817-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20170922_N1080818-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20170922_N1080821-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170922_N1080826-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170922_N1080840-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170922_N1080869-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170922_N1080876-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20170922_N1080879-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170922_N1080887-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170922_N1080891-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170922_N1080898-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20170922_N1080916-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170922_N1080926-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170922_N1080931-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170922_N1080957-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170922_N1080985-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
-              <img class="concertPix" src="2016-17/20170922_N1080990-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="2016-17/20170922_N1080994-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="images/theend1.jpg" style="width:95%;height:71%;">
-              <img class="concertPix" src="images/theend2.jpg" style="width:95%;height:71%;">
-            </td></tr></table>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <button onclick="changePic(-1)" id="buttonPrev" title="Previous slide"><b>&#10094;</b></button>
-            <button onclick="toggleFlow(this)" id="buttonPlayPause" title="Play/pause">&#10074;&#10074;</button>
-            <button onclick="changePic(1)" id="buttonNext" title="Next slide"><b>&#10095;</b></button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <b><span id="slideName"></span></b>
-          </td>
-        </tr>
-      </table>
-      <script type="text/javascript">
-        if (MANUAL_SLIDESHOW) {
-          hidePlayButton();
-          slideIndex = 1;
-          showPic(slideIndex);
-        } else {
-          slideIndex = 0;
-          slideshow();
-        }
-      </script>
-    </center>
+  <body>
+    <table id="outerTable">
+      <tr>
+        <td>
+          <span id="slideTitle">2016-17 Concerts</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table id="innerTable"><tr><td>
+            <img class="concertPix" alt="Slide" src="2016-17/title.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160128_I1130302-Dale_Watson_and_His_Lone_Stars@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160128_I1130312C-Dale_Watson_and_His_Lone_Stars@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160128_I1130316-Dale_Watson_and_His_Lone_Stars@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160128_I1130352C-Jason_Boland_and_the_Stragglers@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160128_I1130362-Jason_Boland_and_the_Stragglers@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160128_I1130368-Jason_Boland_and_the_Stragglers@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160128_I1130382-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160128_I1130387-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160128_I1130389-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160128_I1130393-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160128_I1130404-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160128_I1130406-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160128_I1130408-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160128_I1130421C-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160128_I1130425C-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160128_I1130443-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160128_I1130456-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160128_I1130471-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160128_I1130502-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160128_I1130512-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160128_I1130524-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160128_I1130533-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160128_I1130543-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160128_I1130549-Lynyrd_Skynyrd@Cedar_Park_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160226_I1130660-Tyler_Bryant_%5Bamp%5D_The_Shakedown@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160226_I1130662-Tyler_Bryant_%5Bamp%5D_The_Shakedown@Toyota_Center_in_Houston_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160226_I1130667-Tyler_Bryant_%5Bamp%5D_The_Shakedown@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160226_I1130671-Tyler_Bryant_%5Bamp%5D_The_Shakedown@Toyota_Center_in_Houston_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160226_I1130673-Tyler_Bryant_%5Bamp%5D_The_Shakedown@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160226_I1130701-AC%5Bsol%5DDC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160226_I1130764-AC%5Bsol%5DDC@Toyota_Center_in_Houston_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160226_I1130770-AC%5Bsol%5DDC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160226_I1130784-AC%5Bsol%5DDC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160226_I1130786-AC%5Bsol%5DDC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160226_I1130790-AC%5Bsol%5DDC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160226_I1130806-AC%5Bsol%5DDC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160226_I1130822-AC%5Bsol%5DDC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160226_I1130832C-AC%5Bsol%5DDC@Toyota_Center_in_Houston_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160226_I1130847C-AC%5Bsol%5DDC@Toyota_Center_in_Houston_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160226_I1130883C-AC%5Bsol%5DDC@Toyota_Center_in_Houston_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160226_I1130885-AC%5Bsol%5DDC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160226_I1130900-AC%5Bsol%5DDC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160226_I1130914C-AC%5Bsol%5DDC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160226_I1130951-AC%5Bsol%5DDC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160226_I1130981-AC%5Bsol%5DDC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160226_I1130993C-AC%5Bsol%5DDC@Toyota_Center_in_Houston_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160226_I1130994-AC%5Bsol%5DDC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160226_I1140016-AC%5Bsol%5DDC@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160226_I1140020C-AC%5Bsol%5DDC@Toyota_Center_in_Houston_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140652-Chic_featuring_Nile_Rodgers@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140653C-Chic_featuring_Nile_Rodgers@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140658-Chic_featuring_Nile_Rodgers@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140667-Chic_featuring_Nile_Rodgers@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140668-Chic_featuring_Nile_Rodgers@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140670-Chic_featuring_Nile_Rodgers@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140674-Chic_featuring_Nile_Rodgers@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140682-Chic_featuring_Nile_Rodgers@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140692-Chic_featuring_Nile_Rodgers@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140696-Chic_featuring_Nile_Rodgers@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140701-Chic_featuring_Nile_Rodgers@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140718-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140724-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140729-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140733-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140736-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140737-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140744-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140753-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140767-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140770-Duran_Duran_and_Nile_Rodgers@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140773C-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140788-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140809-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140827-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140836-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140845-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140862-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140875-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140877-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160423_I1140878-Duran_Duran@Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1140914-Steelheart@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1140919-Steelheart@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1140927-Steelheart@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1140932-Steelheart@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1140939-Steelheart@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1140943-Steelheart@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1140960-Jack_Russell's_Great_White@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1140963-Jack_Russell's_Great_White@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1140974-Jack_Russell's_Great_White@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1140989-Jack_Russell's_Great_White@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1140990-Jack_Russell's_Great_White@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1140994-Jack_Russell's_Great_White@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1140997-Jack_Russell's_Great_White@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150013-FireHouse@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150027-FireHouse@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150032-FireHouse@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150056-FireHouse@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150062-FireHouse@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150064-Warrant@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150078-Warrant@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150084-Warrant@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150088-Warrant@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150093-Warrant@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150096-Warrant@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150102-Warrant@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150115C-Warrant@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150119C-Warrant@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150121-Warrant@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150152-Ratt@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150155-Ratt@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150158-Ratt@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150163C-Ratt@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150174C-Ratt@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150184-Ratt@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150187-Ratt@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150190-Ratt@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150223-Bret_Michaels_Band@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150232C-Bret_Michaels_Band@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150238-Bret_Michaels_Band@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150247-Bret_Michaels_Band@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150259-Bret_Michaels_Band@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150263C-Bret_Michaels_Band@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150272-Bret_Michaels_Band@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150285-Bret_Michaels_Band@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160424_I1150291-Bret_Michaels_Band@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160629_I1150640-Brit_Floyd@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160629_I1150641-Brit_Floyd@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160629_I1150644-Brit_Floyd@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160629_I1150657-Brit_Floyd@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160629_I1150668-Brit_Floyd@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160629_I1150687-Brit_Floyd@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160629_I1150694-Brit_Floyd@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160629_I1150715-Brit_Floyd@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160629_I1150718-Brit_Floyd@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160629_I1150734-Brit_Floyd@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160629_I1150745-Brit_Floyd@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160629_I1150748-Brit_Floyd@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150783-Black_Stone_Cherry@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150790-Black_Stone_Cherry@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150797-Black_Stone_Cherry@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150800-Black_Stone_Cherry@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150810-Black_Stone_Cherry@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150813-Whiskey_Myers@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150848-Whiskey_Myers@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150853-Whiskey_Myers@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150862-Whiskey_Myers@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150868-Whiskey_Myers@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150873-Whiskey_Myers@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150881-Halestorm@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150884-Halestorm@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150885-Halestorm@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150890C-Halestorm@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150900-Halestorm@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150908-Halestorm@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150920-Halestorm@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150929-Halestorm@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150932-Halestorm@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150960-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150974-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150978-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150980-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150981-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150983-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150990-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1150996-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1160000-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1160010-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1160017-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1160022-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1160030-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1160037C-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1160039-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1160041-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1160043-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1160046-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20160731_I1160061-Shinedown@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20161117T212322-Alan_Parsons_@Paramount_Theater_in_Austin_TX.jpg" style="width:95%;height:53%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20161214_N1050042-Fitz_and_the_Tantrums@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20161214_N1050043-Fitz_and_the_Tantrums@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20161214_N1050053-Fitz_and_the_Tantrums@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20161214_N1050067-Fitz_and_the_Tantrums@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20161214_N1050074-Fitz_and_the_Tantrums@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20161214_N1050085-Blue_October@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20161214_N1050103-Blue_October@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20161214_N1050104-Blue_October@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20161214_N1050118-Blue_October@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20161214_N1050120-Blue_October@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20161214_N1050124-Blue_October@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20161214_N1050139-Blue_October@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20161214_N1050156-Train@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20161214_N1050177-Train@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20161214_N1050180-Train@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20161214_N1050187-Train@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20161214_N1050188-Train@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20161214_N1050189-Train@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20161214_N1050196-Train@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20161214_N1050198-Train@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20161214_N1050209-Train@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20161214_N1050251-Train@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20161214_N1050252-Train@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20161214_N1050260C-Train@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170610T201200-30_Seconds_to_Mars@Austin360_Amphitheater_in_Austin_TX.jpg" style="height:95%;width:53%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170610T201859-30_Seconds_to_Mars@Austin360_Amphitheater_in_Austin_TX.jpg" style="width:95%;height:53%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170610T201952-30_Seconds_to_Mars@Austin360_Amphitheater_in_Austin_TX.jpg" style="width:95%;height:53%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170610T211852-Muse@Austin360_Amphitheater_in_Austin_TX.jpg" style="width:95%;height:53%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170610T215125-Muse@Austin360_Amphitheater_in_Austin_TX.jpg" style="width:95%;height:53%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170610T215618-Muse@Austin360_Amphitheater_in_Austin_TX.jpg" style="width:95%;height:53%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170610T215634-Muse@Austin360_Amphitheater_in_Austin_TX.jpg" style="width:95%;height:53%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170610T222153-Muse@Austin360_Amphitheater_in_Austin_TX.jpg" style="width:95%;height:53%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170610T223121-Muse@Austin360_Amphitheater_in_Austin_TX.jpg" style="width:95%;height:53%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170610T223346-Muse@Austin360_Amphitheater_in_Austin_TX.jpg" style="width:95%;height:53%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170610T223420-Muse@Austin360_Amphitheater_in_Austin_TX.jpg" style="width:95%;height:53%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170706_M1010457-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170706_M1010464-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170706_M1010467-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170706_M1010479-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170706_M1010482-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170706_M1010494-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170706_M1010495-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170706_M1010507-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170706_M1010512-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170706_M1010519-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170706_M1010524-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170706_M1010527-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170706_M1010534-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170706_M1010536-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170706_M1010541-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170706_M1010554-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170706_M1010563-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170706_M1010566-Roger_Waters@Toyota_Center_in_Houston_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080136-Don_Felder@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080137C-Don_Felder@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080150-Don_Felder@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080155-Don_Felder@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080164-Don_Felder@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080165-Don_Felder@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080174-Don_Felder_and_Tommy_Shaw@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080178-Don_Felder_and_Tommy_Shaw@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080183-Don_Felder@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080216C-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080220-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080227-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080228-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080249-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080251C-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080259-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080263-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080265-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080272C-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080280-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080296-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080302C-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080307C-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080325-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080341-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080344-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080346-Styx@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080356C-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080369-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080371-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080376-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080378-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080381-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080388-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080391-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080397-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080409-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080414-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080416-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080427C-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080431-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080440-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080444C-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080454-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170731_N1080464-REO_Speedwagon@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170922_N1080797-St_Paul_And_The_Broken_Bones@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170922_N1080804-St_Paul_And_The_Broken_Bones@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170922_N1080817-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170922_N1080818-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170922_N1080821-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170922_N1080826-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170922_N1080840-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170922_N1080869-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170922_N1080876-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170922_N1080879-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170922_N1080887-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170922_N1080891-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170922_N1080898-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170922_N1080916-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170922_N1080926-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170922_N1080931-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170922_N1080957-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170922_N1080985-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="height:95%;width:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170922_N1080990-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="2016-17/20170922_N1080994-Daryl_Hall_and_John_Oates@H-E-B_Center_in_Cedar_Park_TX.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="images/theend1.jpg" style="width:95%;height:71%;">
+            <img class="concertPix" alt="Slide" src="images/theend2.jpg" style="width:95%;height:71%;">
+          </td></tr></table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button onclick="changePic(-1)" id="buttonPrev" title="Previous slide"><b>&#10094;</b></button>
+          <button onclick="toggleFlow(this)" id="buttonPlayPause" title="Play/pause">&#10074;&#10074;</button>
+          <button onclick="changePic(1)" id="buttonNext" title="Next slide"><b>&#10095;</b></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span id="slideName"></span>
+        </td>
+      </tr>
+    </table>
+    <script>
+      if (MANUAL_SLIDESHOW) {
+        hidePlayButton();
+        slideIndex = 1;
+        showPic(slideIndex);
+      } else {
+        slideIndex = 0;
+        slideshow();
+      }
+    </script>
   </body>
 </html>

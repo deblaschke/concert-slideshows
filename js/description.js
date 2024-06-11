@@ -6,6 +6,7 @@ function getDescription(path) {
   // file is of format "yyyymmdd_picture-description"
 
   // Process valid paths (must have directory separator and .jpg extension)
+  path = decodeURI(path);
   var index = path.lastIndexOf('/');
   if (index >= 0 && path.lastIndexOf('.jpg') > index) {
     var file = path.substring(index + 1, path.lastIndexOf('.'));
