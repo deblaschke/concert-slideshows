@@ -258,6 +258,7 @@ document.onreadystatechange = function() {
 
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log("HERE 5");
+  setPicDimensions();
     if (MANUAL_SLIDESHOW) {
       hidePlayButton();
       slideIndex = 1;
