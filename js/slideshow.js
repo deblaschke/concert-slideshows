@@ -1,9 +1,9 @@
 // Indicates manual (true) or automatic (false) slideshow
-var MANUAL_SLIDESHOW     = false;
+var MANUAL_SLIDESHOW = false;
 // Automatic slideshow interval in milliseconds
-var SLIDESHOW_INTERVAL   = 3000;
+var SLIDESHOW_INTERVAL = 3000;
 // Indicates audio (true) or no audio (false) during slideshow
-var SLIDESHOW_AUDIO      = false;
+var SLIDESHOW_AUDIO = false;
 
 // Current slide index
 var slideIndex;
@@ -240,6 +240,16 @@ window.onload = function() {
     if (audioCredit.indexOf("theend3") != -1) {
       slideshowElems[slideshowElems.length-1].src = audioCredit.replace("theend3", "theend3-audio");
     }
+  }
+
+  // Initiate slideshow
+  if (MANUAL_SLIDESHOW) {
+    hidePlayButton();
+    slideIndex = 1;
+    showPic(slideIndex);
+  } else {
+    slideIndex = 0;
+    slideshow();
   }
 }
 
