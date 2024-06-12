@@ -241,19 +241,24 @@ window.onload = function() {
       slideshowElems[slideshowElems.length-1].src = audioCredit.replace("theend3", "theend3-audio");
     }
   }
-
-  // Initiate slideshow
-  if (MANUAL_SLIDESHOW) {
-    hidePlayButton();
-    slideIndex = 1;
-    showPic(slideIndex);
-  } else {
-    slideIndex = 0;
-    slideshow();
-  }
 }
 
 // Handle window resize
 window.onresize = function() {
   setPicDimensions();
+}
+
+// Handle document readyState attribute change
+document.onreadystatechange = function() {
+  if (document.readyState === 'complete') {
+    // Initiate slideshow
+    if (MANUAL_SLIDESHOW) {
+      hidePlayButton();
+      slideIndex = 1;
+      showPic(slideIndex);
+    } else {
+      slideIndex = 0;
+      slideshow();
+    }
+  }
 }
