@@ -241,14 +241,6 @@ window.onload = function() {
       slideshowElems[slideshowElems.length-1].src = audioCredit.replace("theend3", "theend3-audio");
     }
   }
-    if (MANUAL_SLIDESHOW) {
-      hidePlayButton();
-      slideIndex = 1;
-      showPic(slideIndex);
-    } else {
-      slideIndex = 0;
-      slideshow();
-    }
     console.log("HERE 3");
 }
 
@@ -263,5 +255,3 @@ document.onreadystatechange = function() {
     console.log("HERE 2");
   }
 }
-  console.log("HERE 4");
-  setPicDimensions();
