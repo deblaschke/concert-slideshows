@@ -255,3 +255,17 @@ document.onreadystatechange = function() {
     console.log("HERE 2");
   }
 }
+
+document.addEventListener("DOMContentLoaded", (event) => {
+    console.log("HERE 5");
+    if (MANUAL_SLIDESHOW) {
+      hidePlayButton();
+      slideIndex = 1;
+      showPic(slideIndex);
+    } else {
+      slideIndex = 0;
+      slideshow();
+    }
+});
+
+
