@@ -1,0 +1,101 @@
+body {
+  background-color: #000000;
+  color: #FFFFFF;
+  margin: auto;
+  max-width: max-content;
+}
+
+img {
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+tr td a  {
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+}
+
+#outerTable {
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  padding: 5px;
+  border-spacing: 5px;
+  width: 60%;
+}
+
+#outerTable tr {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.header-txt {
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 5px 5px 5px rgba(255, 255, 255, 0.6);
+}
+
+#innerTable {
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  padding: 10px;
+  border-spacing: 10px;
+}
+
+.menu-item:hover {
+  transform: scale(1.10);
+  z-index: 1;
+  background-color: #000000;
+}
+
+.menu-item-txt:hover {
+  cursor: pointer;
+}
+
+.menu-item-img {
+  vertical-align: top;
+}
+
+.menu-item-img-desc {
+  display: block;
+  font-size: x-small;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.menu-item-txt, .menu-item-txt-static {
+  text-align: left;
+  vertical-align: top;
+}
+
+.menu-item-txt-year {
+  font-size: large;
+  font-weight: bold;
+  text-shadow: 3px 3px 3px rgba(255, 255, 255, 0.6);
+}
+
+.menu-item-txt-pics {
+  font-size: small;
+}
+
+.menu-item-txt-size {
+  font-size: small;
+  display: none;
+}
+
+.menu-item-txt-desc {
+  font-size: small;
+  font-style: italic;
+}
+
+.updates-txt {
+  font-size: x-small;
+  font-style: italic;
+}
