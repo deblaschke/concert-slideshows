@@ -2,11 +2,12 @@
 CONCERT PICTURE SLIDESHOWS README
 ---------------------------------
 
-To view the slideshows, open https://deblaschke.github.io/concert-slideshows/
+To view the slideshows, go to https://deblaschke.github.io/concert-slideshows/
 in your favorite browser and select the slideshow of interest by clicking on its
-thumbnail.  The slideshow will open in a new tab/window.  When the slideshow is
-complete (there are three standard closing credit slides at the end) or you've
-had too much, close the tab/window.
+thumbnail or description (both will enlarge when selectable).  The slideshow
+will open in a new tab/window. When the slideshow is complete (there are two
+standard closing credit slides at the end) or you've had too much, close the
+tab/window.
 
 Automatic slideshows have three control buttons below the pictures: previous
 slide, pause/play, and next slide.  Manual slideshows only have the previous
@@ -32,7 +33,7 @@ The following slideshow attibutes can be customized:
 
    2) Interval
 
-      In js/slideshow.js, change SLIDESHOW_INTERVAL (default 5000) to desired
+      In js/slideshow.js, change SLIDESHOW_INTERVAL (default 3000) to desired
       value in milliseconds
 
       NOTE: Only applicable if MANUAL_SLIDESHOW is false
