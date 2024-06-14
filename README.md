@@ -4,10 +4,9 @@ CONCERT PICTURE SLIDESHOWS README
 
 To view the slideshows, go to https://deblaschke.github.io/concert-slideshows/
 in your favorite browser and select the slideshow of interest by clicking on its
-thumbnail or description (both will enlarge when selectable).  The slideshow
-will open in a new tab/window. When the slideshow is complete (there are two
-standard closing credit slides at the end) or you've had too much, close the
-tab/window.
+thumbnail, which will enlarge when selectable.  The slideshow will open in a new
+tab/window. When the slideshow is complete (there are two standard closing credit
+slides at the end) or you've had too much, close the tab/window.
 
 Automatic slideshows have three control buttons below the pictures: previous
 slide, pause/play, and next slide.  Manual slideshows only have the previous
