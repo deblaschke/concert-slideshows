@@ -94,7 +94,7 @@ tr td a  {
 
 .menu-item-txt-size {
   font-size: small;
-  display: none;
+/*display: none;*/
 }
 
 .menu-item-txt-desc {
