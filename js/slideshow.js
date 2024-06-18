@@ -68,11 +68,6 @@ function playAudio(path) {
   }
 }
 
-// Play default audio if audio clip array not specified
-if (SLIDESHOW_AUDIO && typeof(mapSlideToAudio) !== 'object') {
-  playAudio("media/audio.mp3");
-}
-
 // hidePlayButton hides play/pause button for manual slideshows
 function hidePlayButton() {
   document.getElementById("buttonPlayPause").style.display = "none";
@@ -233,11 +228,22 @@ function setPicDimensions() {
 
 // Handle window load
 window.onload = function() {
-  // Change audio credit if it exists and audio clip array not specified
-  if (typeof(mapSlideToAudio) !== 'object') {
+  if (SLIDESHOW_AUDIO) {
+    if (typeof(mapSlideToAudio) !== 'object') {
+      // Play default audio
+      playAudio("media/audio.mp3");
+
+      // Change music credit (last slide) if it exists
+      var audioCredit = slideshowElems[slideshowElems.length-1].src;
+      if (audioCredit.indexOf("theend3") != -1) {
+        slideshowElems[slideshowElems.length-1].src = audioCredit.replace("theend3", "theend3-audio");
+      }
+    }
+  } else {
+    // Remove music credit (last slide) if it exists
     var audioCredit = slideshowElems[slideshowElems.length-1].src;
     if (audioCredit.indexOf("theend3") != -1) {
-      slideshowElems[slideshowElems.length-1].src = audioCredit.replace("theend3", "theend3-audio");
+      slideshowElems[slideshowElems.length-1].remove();
     }
   }
 }
