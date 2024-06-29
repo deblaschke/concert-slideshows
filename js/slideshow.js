@@ -4,6 +4,8 @@ var MANUAL_SLIDESHOW = false;
 var SLIDESHOW_INTERVAL = 3000;
 // Indicates audio (true) or no audio (false) during slideshow
 var SLIDESHOW_AUDIO = false;
+// Indicates concert date (null indicates none)
+var SLIDESHOW_DATE = null;
 
 // Current slide index
 var slideIndex;
@@ -39,6 +41,10 @@ if ("URLSearchParams" in window) {
   if (urlParam === 'off') {
     SLIDESHOW_AUDIO = false;
   }
+  urlParam = urlParams.get('date');
+  if (/^\d{8}$/.test(urlParam)) {
+    SLIDESHOW_DATE = urlParam;
+  }
 }
 
 // playAudio creates and plays audio object where path is audio clip path
@@ -68,6 +74,23 @@ function playAudio(path) {
   }
 }
 
+// reduceSlideshow removes elements from slideshowElems that are not specified date
+function reduceSlideshow() {
+  var i;
+
+  // Start at end so that remove() does not affect index
+  for (i = slideshowElems.length - 1; i > -1; i--) {
+    var path = slideshowElems[i].src;
+    var index = path.lastIndexOf('/');
+    if (index >= 0 && path.lastIndexOf('.jpg') > index) {
+      var file = path.substring(index + 1, path.lastIndexOf('.'));
+      if (file.match(/^[0-9]{8}/) && (!file.startsWith(SLIDESHOW_DATE))) {
+        slideshowElems[i].remove();
+      }
+    }
+  }
+  SLIDESHOW_DATE = null;
+}
 // hidePlayButton hides play/pause button for manual slideshows
 function hidePlayButton() {
   document.getElementById("buttonPlayPause").style.display = "none";
@@ -131,6 +154,9 @@ function changePic(n) {
 
 // showPic displays slide where n is slide index
 function showPic(n) {
+  // Reduce slideshow to specific date (one time only)
+  if (SLIDESHOW_DATE) reduceSlideshow();
+
   // Handle wrapping past end of slideshow
   if (n > slideshowElems.length) {slideIndex = 1}
 
@@ -152,6 +178,9 @@ function showPic(n) {
 
 // slideshow begins automatic slideshow
 function slideshow() {
+  // Reduce slideshow to specific date (one time only)
+  if (SLIDESHOW_DATE) reduceSlideshow();
+
   slideIndex++;
 
   // Handle wrapping past end of slideshow
