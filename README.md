@@ -40,3 +40,9 @@ The following slideshow attibutes can be customized:
       NOTE: This can be overridden on the URL through use of the interval query
       parameter, for example "?interval=1000"
 
+   3) Date
+
+      A specific concert can be set on the URL through use of the date query
+      parameter, for example "?date=20241231" will display only pictures
+      20241231*
+
