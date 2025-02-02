@@ -23,8 +23,8 @@ body {
   vertical-align: middle;
   display: block;
   text-wrap: wrap;
-  background-color: rgba(0, 0, 0, 0.75);
   text-shadow: 4px 4px 4px rgba(255, 255, 255, 0.6);
+  background-color: rgba(0, 0, 0, 0.75);
 }
 
 #innerTable td {
@@ -48,7 +48,7 @@ button {
   vertical-align: top;
   width: 2em;
   height: 2em;
-  box-shadow: 4px 4px 4px rgba(255, 255, 255, 0.3);
+  box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.3);
 }
 
 #slideName {
@@ -57,5 +57,6 @@ button {
   vertical-align: middle;
   display: block;
   text-wrap: wrap;
+  text-shadow: 3px 3px 3px rgba(255, 255, 255, 0.4);
   background-color: rgba(0, 0, 0, 0.75);
 }
