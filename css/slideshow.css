@@ -60,3 +60,14 @@ button {
   text-shadow: 3px 3px 3px rgba(255, 255, 255, 0.4);
   background-color: rgba(0, 0, 0, 0.75);
 }
+
+#slideSong {
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  display: block;
+  text-wrap: wrap;
+  text-shadow: 3px 3px 3px rgba(255, 255, 255, 0.4);
+  background-color: rgba(0, 0, 0, 0.75);
+  display: none;
+}

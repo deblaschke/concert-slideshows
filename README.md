@@ -10,8 +10,9 @@ slides at the end) or you've had too much, close the tab/window.
 
 Automatic slideshows have three control buttons below the pictures: previous
 slide, pause/play, and next slide.  Manual slideshows only have the previous
-slide and next slide buttons.  The left arrow (previous slide) and right arrow
-(next slide) keys can be used in lieu of the control buttons.
+slide and next slide buttons.  The left arrow (previous slide), right arrow
+(next slide), and escape (pause/play) keys can be used in lieu of the control
+buttons.
 
 The slideshows have been tested on the following browsers:
    Firefox on Windows and macOS
