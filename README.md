@@ -44,6 +44,6 @@ The following slideshow attibutes can be customized:
    3) Date
 
       A specific concert can be set on the URL through use of the date query
-      parameter, for example "?date=20241231" will display only pictures
-      20241231*
+      parameter, for example "?date=20241231" will display only pictures from
+      12/31/2024
 
