@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <base href="..">
+    <title>Concert Slideshows Search</title>
+    <link rel="stylesheet" href="css/slideshow.css">
+    <script src="js/slideshow.js"></script>
+    <script src="js/description.js"></script>
+    <script src="SEARCH/all_slides.js"></script>
+    <style media="screen">
+      input, select {
+        font-family: Arial;
+        vertical-align: middle;
+        height: 1.6em;
+        box-sizing: content-box;
+        box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.3);
+      }
+
+      #searchBar {
+        font-size: small;
+        vertical-align: middle;
+      }
+
+      #slideContent {
+        color: #800080;
+        font-size: 2em;
+        font-weight: bold;
+      }
+    </style>
+    <script>
+      // Disable audio for search, results can be choppy
+      SLIDESHOW_AUDIO = false;
+      SLIDESHOW_INTERVAL = 3000;
+
+      // Maximum allowed search results
+      const MAXIMUM_SEARCH_RESULT = 1500;
+
+      // getSearchError returns user error, which is base[+text][+venue]
+      function getSearchError(base, venue, text) {
+        let msg = base;
+        if (text != null)
+          msg = msg + " for text=\"" + text + "\"";
+        if (venue != null)
+          msg = msg + " in venue=\"" + venue.replace(/_/g, ' ') + "\"";
+        return msg;
+      }
+
+      // slideshowSearch runs slideshow based on filterd search results
+      function slideshowSearch() {
+        // Start with all available slides
+        let filtered_slides = all_slides;
+
+        // Filter slides based on venue, if one provided
+        let venue = null;
+        let inputVenue = document.getElementById("inputVenue");
+        if (inputVenue != null) {
+          venue = inputVenue.value;
+          if (venue != null && venue.length > 0) {
+            if (venue == "Austin360_Amphitheater_in_Austin_TX" || venue == "Germania_Insurance_Amphitheater_in_Austin_TX") {
+              // Special case: Austin360 Amphitheater renamed Germania Insurance Amphitheater 01/01/20
+              filtered_slides = filtered_slides.filter(slide => slide.venue == "Austin360_Amphitheater_in_Austin_TX" || slide.venue == "Germania_Insurance_Amphitheater_in_Austin_TX");
+            } else if (venue == "Cedar_Park_Center_in_Cedar_Park_TX" || venue == "H-E-B_Center_in_Cedar_Park_TX") {
+              // Special case: Cedar Park Center renamed H-E-B Center 04/22/16
+              filtered_slides = filtered_slides.filter(slide => slide.venue == "Cedar_Park_Center_in_Cedar_Park_TX" || slide.venue == "H-E-B_Center_in_Cedar_Park_TX");
+            } else {
+              // Default case
+              filtered_slides = filtered_slides.filter(slide => slide.venue == venue);
+            }
+          } else {
+            venue = null;
+          }
+        }
+
+        // Filter slides based on text, if one provided ('!' as first character indicates negative search)
+        let text = null;
+        let invalidText = false;
+        let inputText = document.getElementById("inputText");
+        if (inputText != null) {
+          text = inputText.value;
+          if (text != null && text.trim().length > 0) {
+             let cleanText = text.trim();
+
+             // Valid characters are initial '!', letters, digits and whitespace
+             if (!cleanText.match(/^!?[0-9A-Za-z\s]+$/)) {
+               invalidText = true;
+             } else {
+               // File names have underscores instead of spaces
+               cleanText = cleanText.replace(/\s+/g, '_');
+               if (cleanText.charAt(0) == '!' && cleanText.length > 1) {
+                 filtered_slides = filtered_slides.filter(slide => !slide.file.toLowerCase().substring(slide.file.charAt(8) == '_' ? 10 : 16).includes(cleanText.substr(1).toLowerCase()));
+               } else {
+                 filtered_slides = filtered_slides.filter(slide => slide.file.toLowerCase().substring(slide.file.charAt(8) == '_' ? 10 : 16).includes(cleanText.toLowerCase()));
+               }
+             }
+          } else {
+            text = null;
+          }
+        }
+
+        // Invalid search text, issue error
+        if (invalidText) {
+          alert("Invalid character in text=\"" + text + "\"");
+        }
+
+        // No search criteria, issue error
+        else if (venue == null && text == null) {
+          alert(getSearchError("No search criteria", venue, text));
+        }
+
+        // No search results, issue error
+        else if (filtered_slides.length == 0) {
+          alert(getSearchError("No search results", venue, text));
+        }
+
+        // Too many search results, issue error
+        else if (filtered_slides.length > MAXIMUM_SEARCH_RESULT) {
+          alert(getSearchError("Too many search results (" + filtered_slides.length + ")", venue, text));
+        }
+
+        // Search results just right, start slideshow
+        else {
+          const targetElement = document.getElementById('slideContent');
+
+          // Clear out any existing slides in slideshow
+          while (targetElement.firstChild) {
+            targetElement.removeChild(targetElement.lastChild);
+          }
+
+          // Add title to slideshow
+          let imgElem = document.createElement('img');
+          imgElem.src = "SEARCH/title.jpg";
+          imgElem.alt = "Title";
+          imgElem.className = "concertPix";
+          imgElem.style = "width:95%;height:71%;";
+          targetElement.appendChild(imgElem);
+
+          // Add matching slides to slideshow
+          filtered_slides.forEach(function(slide) {
+            imgElem = document.createElement('img');
+            imgElem.src = slide.dir + "/" + slide.file + "@" + slide.venue + ".jpg";
+            imgElem.alt = 'Slide';
+            imgElem.className = 'concertPix';
+            imgElem.style = slide.style;
+            targetElement.appendChild(imgElem);
+          });
+
+          // Add credits to slideshow
+          imgElem = document.createElement('img');
+          imgElem.src = "images/theend1.jpg";
+          imgElem.alt = "Credit";
+          imgElem.className = "concertPix";
+          imgElem.style = "width:95%;height:71%;";
+          targetElement.appendChild(imgElem);
+          imgElem = document.createElement('img');
+          imgElem.src = "images/theend2.jpg";
+          imgElem.alt = "Credit";
+          imgElem.className = "concertPix";
+          imgElem.style = "width:95%;height:71%;";
+          targetElement.appendChild(imgElem);
+
+          // Set number of slides in search results
+          document.getElementById("searchResults").innerHTML = "&nbsp;<b>(" + filtered_slides.length + "/" + all_slides.length + " photos)</b>";
+
+          // Initiate slideshow
+          slideIndex = 0;
+          if (MANUAL_SLIDESHOW) {
+            hidePlayButton();
+            showPic(1);
+          } else {
+            slideshow();
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    </table>
+    <table id="outerTable">
+      <tr>
+        <td>
+          <span id="slideTitle">Concert Slideshows Search</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span id="searchBar">
+            <input type="text" id="inputText" placeholder="Enter text">
+            <select id="inputVenue">
+              <option value="">Select venue</option>
+              <option value=""></option>
+              <option value="ACL_Live_at_Moody_Theater_in_Austin_TX">ACL Live at Moody Theater</option>
+              <option value="Alamodome_in_San_Antonio_TX">Alamodome</option>
+              <option value="AT%5Bamp%5DT_Center_in_San_Antonio_TX">AT&T Center</option>
+              <option value="Austin360_Amphitheater_in_Austin_TX">Austin360 Amphitheater</option>
+              <option value="Aztec_Theatre_in_San_Antonio_TX">Aztec Theatre</option>
+              <option value="Batfest_in_Austin_TX">Batfest</option>
+              <option value="Cadence_Bank_Center_in_Belton_TX">Cadence Bank Center</option>
+              <option value="Cedar_Park_Center_in_Cedar_Park_TX">Cedar Park Center</option>
+              <option value="Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX">Cynthia Woods Pavilion</option>
+              <option value="Frank_Erwin_Center_in_Austin_TX">Frank Erwin Center</option>
+              <option value="Freeman_Coliseum_in_San_Antonio_TX">Freeman Coliseum</option>
+              <option value="Frost_Bank_Center_in_San_Antonio_TX">Frost Bank Center</option>
+              <option value="Germania_Insurance_Amphitheater_in_Austin_TX">Germania Insurance Amphitheater</option>
+              <option value="Gexa_Energy_Pavilion_in_Dallas_TX">Gexa Energy Pavilion</option>
+              <option value="Grey_Eagle_Resort_%5Bamp%5D_Casino_in_Calgary_AB">Grey Eagle Resort</option>
+              <option value="H-E-B_Center_in_Cedar_Park_TX">H-E-B Center</option>
+              <option value="Intuit_Dome_in_Inglewood_CA">Intuit Dome</option>
+              <option value="Moody_Center_in_Austin_TX">Moody Center</option>
+              <option value="Red_Rocks_Amphitheatre_in_Morrison_CO">Red Rocks Amphitheatre</option>
+              <option value="Smart_Financial_Centre_in_Sugar_Land_TX">Smart Financial Centre</option>
+              <option value="Tobin_Center_for_the_Performing_Arts_in_San_Antonio_TX">Tobin Center</option>
+              <option value="Toyota_Center_in_Houston_TX">Toyota Center</option>
+              <option value="Verizon_Theatre_in_Grand_Prairie_TX">Verizon Theatre</option>
+            </select>
+            <button onclick="slideshowSearch()">&#x1F50D;</button>
+            <span id="searchResults"><b>&nbsp;(? photos)</b></span>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table id="innerTable"><tr><td>
+            <span id="slideContent">
+              Please enter text and/or select venue above, then click search button
+            </span>
+          </td></tr></table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button onclick="changePic(-1)" id="buttonPrev" title="Previous slide"><b>&#10094;</b></button>
+          <button onclick="toggleFlow(this)" id="buttonPlayPause" title="Pause">&#10074;&#10074;</button>
+          <button onclick="changePic(1)" id="buttonNext" title="Next slide"><b>&#10095;</b></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span id="slideName"></span><br>
+          <span id="slideSong"></span>
+        </td>
+      </tr>
+    </table>
+    <script>
+      // Initialize search results
+      document.getElementById("searchResults").innerHTML = "&nbsp;<b>(?/" + all_slides.length + " photos)</b>";
+    </script>
+  </body>
+</html>

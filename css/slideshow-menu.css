@@ -109,6 +109,16 @@ img {
   text-shadow: 4px 4px 4px rgba(255, 255, 255, 0.4);
 }
 
+.notes-hdr {
+  font-size: x-large;
+  font-weight: bold;
+  text-shadow: 4px 4px 4px rgba(255, 255, 255, 0.4);
+}
+
+li {
+  text-align: left;
+}
+
 .updates-txt {
   font-size: x-small;
   font-style: italic;
