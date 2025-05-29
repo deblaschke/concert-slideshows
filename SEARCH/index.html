@@ -63,6 +63,9 @@
             } else if (venue == "Cedar_Park_Center_in_Cedar_Park_TX" || venue == "H-E-B_Center_in_Cedar_Park_TX") {
               // Special case: Cedar Park Center renamed H-E-B Center 04/22/16
               filtered_slides = filtered_slides.filter(slide => slide.venue == "Cedar_Park_Center_in_Cedar_Park_TX" || slide.venue == "H-E-B_Center_in_Cedar_Park_TX");
+            } else if (venue == "AT%5Bamp%5DT_Center_in_San_Antonio_TX" || venue == "Frost_Bank_Center_in_San_Antonio_TX") {
+              // Special case: AT&T Center renamed Frost Bank Center 09/22/23
+              filtered_slides = filtered_slides.filter(slide => slide.venue == "AT%5Bamp%5DT_Center_in_San_Antonio_TX" || slide.venue == "Frost_Bank_Center_in_San_Antonio_TX");
             } else {
               // Default case
               filtered_slides = filtered_slides.filter(slide => slide.venue == venue);
