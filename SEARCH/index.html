@@ -245,8 +245,35 @@
       </tr>
     </table>
     <script>
+      // Code is placed here so that the necessary elements (searchResults, etc.) have been defined
+      // when it runs
+
       // Initialize search results
       document.getElementById("searchResults").innerHTML = "&nbsp;<b>(?/" + all_slides.length + " photos)</b>";
+
+      // Allow for search via query parameter
+      if ("URLSearchParams" in window) {
+        let inputText = null;
+        let urlParams = new URLSearchParams(window.location.search);
+
+        // Handle search text query parameter
+        let urlParam = urlParams.get('text');
+        if (urlParam) {
+          if (/^!?[0-9A-Za-z\s]+$/.test(urlParam)) {
+            inputText = urlParam;
+          } else {
+            alert("Invalid character in text=\"" + urlParam + "\", ignored");
+            inputText = null;
+          }
+        }
+
+        // Run slideshow if valid query parameter
+        if (inputText) {
+          let elem = document.getElementById("inputText");
+          elem.value = inputText;
+          slideshowSearch();
+        }
+      }
     </script>
   </body>
 </html>
