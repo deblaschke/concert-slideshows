@@ -51,7 +51,7 @@
         // Start with all available slides
         let filtered_slides = all_slides;
 
-        // Filter slides based on venue, if one provided
+        // Filter slides based on venue, if provided
         let venue = null;
         let inputVenue = document.getElementById("inputVenue");
         if (inputVenue != null) {
@@ -75,7 +75,7 @@
           }
         }
 
-        // Filter slides based on text, if one provided ('!' as first character indicates negative search)
+        // Filter slides based on text, if provided ('!' as first character indicates negative search)
         let text = null;
         let invalidText = false;
         let inputText = document.getElementById("inputText");
@@ -88,12 +88,26 @@
              if (!cleanText.match(/^!?[0-9A-Za-z\s]+$/)) {
                invalidText = true;
              } else {
-               // File names have underscores instead of spaces
-               cleanText = cleanText.replace(/\s+/g, '_');
-               if (cleanText.charAt(0) == '!' && cleanText.length > 1) {
-                 filtered_slides = filtered_slides.filter(slide => !slide.file.toLowerCase().substring(slide.file.charAt(8) == '_' ? 10 : 16).includes(cleanText.substr(1).toLowerCase()));
+               // Handle negative search
+               let negativeSearch = false;
+               if (cleanText.charAt(0) == '!') {
+                 cleanText = cleanText.substring(1);
+                 negativeSearch = true;
+               }
+
+               // Dynamically generate regex pattern for search
+               let textWords = cleanText.split(/\s+/);
+               let regexPattern = ".*";
+               for (let i = 0; i < textWords.length; i++) {
+                 regexPattern += (textWords[i] + ".*");
+               }
+
+               // Perform case-insensitive search
+               regexObj = new RegExp(regexPattern, 'i');
+               if (negativeSearch) {
+                 filtered_slides = filtered_slides.filter(slide => !regexObj.test(slide.file));
                } else {
-                 filtered_slides = filtered_slides.filter(slide => slide.file.toLowerCase().substring(slide.file.charAt(8) == '_' ? 10 : 16).includes(cleanText.toLowerCase()));
+                 filtered_slides = filtered_slides.filter(slide => regexObj.test(slide.file));
                }
              }
           } else {
