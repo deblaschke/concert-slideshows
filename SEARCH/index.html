@@ -29,31 +29,33 @@
       }
     </style>
     <script>
-      // Disable audio for search, results can be choppy
+      // Make sure audio is disabled
       SLIDESHOW_AUDIO = false;
       SLIDESHOW_INTERVAL = 3000;
 
       // Maximum allowed search results
-      const MAXIMUM_SEARCH_RESULT = 1500;
+      var MAXIMUM_SEARCH_RESULT = 1500;
 
       // getSearchError returns user error, which is base[+text][+venue]
       function getSearchError(base, venue, text) {
-        let msg = base;
-        if (text != null)
+        var msg = base;
+        if (text != null) {
           msg = msg + " for text=\"" + text + "\"";
-        if (venue != null)
+        }
+        if (venue != null) {
           msg = msg + " in venue=\"" + venue.replace(/_/g, ' ') + "\"";
+        }
         return msg;
       }
 
       // slideshowSearch runs slideshow based on filterd search results
       function slideshowSearch() {
         // Start with all available slides
-        let filtered_slides = all_slides;
+        var filtered_slides = all_slides;
 
         // Filter slides based on venue, if provided
-        let venue = null;
-        let inputVenue = document.getElementById("inputVenue");
+        var venue = null;
+        var inputVenue = document.getElementById("inputVenue");
         if (inputVenue != null) {
           venue = inputVenue.value;
           if (venue != null && venue.length > 0) {
@@ -76,29 +78,29 @@
         }
 
         // Filter slides based on text, if provided ('!' as first character indicates negative search)
-        let text = null;
-        let invalidText = false;
-        let inputText = document.getElementById("inputText");
+        var text = null;
+        var invalidText = false;
+        var inputText = document.getElementById("inputText");
         if (inputText != null) {
           text = inputText.value;
           if (text != null && text.trim().length > 0) {
-             let cleanText = text.trim();
+             var cleanText = text.trim();
 
              // Valid characters are initial '!', letters, digits and whitespace
-             if (!cleanText.match(/^!?[0-9A-Za-z\s]+$/)) {
+             if (!/^!?[0-9A-Za-z\s]+$/.test(cleanText)) {
                invalidText = true;
              } else {
-               // Handle negative search
-               let negativeSearch = false;
+               // Handle negative search if indicated
+               var negativeSearch = false;
                if (cleanText.charAt(0) == '!') {
                  cleanText = cleanText.substring(1);
                  negativeSearch = true;
                }
 
                // Dynamically generate regex pattern for search
-               let textWords = cleanText.split(/\s+/);
-               let regexPattern = ".*";
-               for (let i = 0; i < textWords.length; i++) {
+               var textWords = cleanText.split(/\s+/);
+               var regexPattern = ".*";
+               for (var i = 0; i < textWords.length; i++) {
                  regexPattern += (textWords[i] + ".*");
                }
 
@@ -137,15 +139,15 @@
 
         // Search results just right, start slideshow
         else {
-          const targetElement = document.getElementById('slideContent');
+          var targetElement = document.getElementById("slideContent");
 
           // Clear out any existing slides in slideshow
-          while (targetElement.firstChild) {
+          while (targetElement.firstChild != null) {
             targetElement.removeChild(targetElement.lastChild);
           }
 
           // Add title to slideshow
-          let imgElem = document.createElement('img');
+          var imgElem = document.createElement('img');
           imgElem.src = "SEARCH/title.jpg";
           imgElem.alt = "Title";
           imgElem.className = "concertPix";
@@ -267,12 +269,12 @@
 
       // Allow for search via query parameter
       if ("URLSearchParams" in window) {
-        let inputText = null;
-        let urlParams = new URLSearchParams(window.location.search);
+        var inputText = null;
+        var urlParams = new URLSearchParams(window.location.search);
 
         // Handle search text query parameter
-        let urlParam = urlParams.get('text');
-        if (urlParam) {
+        var urlParam = urlParams.get('text');
+        if (urlParam != null) {
           if (/^!?[0-9A-Za-z\s]+$/.test(urlParam)) {
             inputText = urlParam;
           } else {
@@ -282,9 +284,8 @@
         }
 
         // Run slideshow if valid query parameter
-        if (inputText) {
-          let elem = document.getElementById("inputText");
-          elem.value = inputText;
+        if (inputText != null) {
+          document.getElementById("inputText").value = inputText;
           slideshowSearch();
         }
       }

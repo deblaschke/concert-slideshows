@@ -34,7 +34,7 @@ if ("URLSearchParams" in window) {
     SLIDESHOW_INTERVAL = parseInt(urlParam, 10);
 
     // Audio clips set up for maximum interval of five seconds
-    if (SLIDESHOW_INTERVAL > 5000) {
+    if (SLIDESHOW_AUDIO && SLIDESHOW_INTERVAL > 5000) {
       alert('Specified interval (' + SLIDESHOW_INTERVAL + ') too large, setting to 5000');
       SLIDESHOW_INTERVAL = 5000;
     }
@@ -73,7 +73,7 @@ function playAudio(path, start) {
   // Play audio object if indicated, catching/ignoring any errors
   if (start) {
     promise = slideshowSound.play();
-    if (promise) {
+    if (promise != null) {
       promise.catch(function(error) { });
     }
   }
@@ -81,15 +81,13 @@ function playAudio(path, start) {
 
 // reduceSlideshow removes elements from slideshowElems that are not specified date
 function reduceSlideshow() {
-  var i;
-
   // Start at end so that remove() does not affect index
-  for (i = slideshowElems.length - 1; i > -1; i--) {
+  for (var i = slideshowElems.length - 1; i > -1; i--) {
     var path = slideshowElems[i].src;
     var index = path.lastIndexOf('/');
     if (index >= 0 && path.lastIndexOf('.jpg') > index) {
       var file = path.substring(index + 1, path.lastIndexOf('.'));
-      if (file.match(/^[0-9]{8}/) && (!file.startsWith(SLIDESHOW_DATE))) {
+      if (/^[0-9]{8}/.test(file) && (!file.startsWith(SLIDESHOW_DATE))) {
         slideshowElems[i].remove();
       }
     }
@@ -151,7 +149,7 @@ function changePic(n) {
       if (slideshowSound != null) {
         // Load silent audio clip and clear song title if user backed up past beginning of song,
         // otherwise play audio
-        if (songSlideCount < 0 ) {
+        if (songSlideCount < 0) {
           slideshowSound.pause();
           playAudio("media/silence.mp3", false);
           document.getElementById("slideSong").innerHTML = "&nbsp;";
@@ -163,7 +161,7 @@ function changePic(n) {
       // Slideshow paused
 
       // Load silent audio clip and clear song title if user backed up past beginning of song
-      if (songSlideCount < 0 ) {
+      if (songSlideCount < 0) {
         playAudio("media/silence.mp3", false);
         document.getElementById("slideSong").innerHTML = "&nbsp;";
       }
@@ -184,7 +182,7 @@ function showPic(n) {
   slideIndex += n;
 
   // Reduce slideshow to specific date (one time only)
-  if (SLIDESHOW_DATE) reduceSlideshow();
+  if (SLIDESHOW_DATE != null) reduceSlideshow();
 
   // Handle wrapping past end of slideshow
   if (slideIndex > slideshowElems.length) {slideIndex = 1}
@@ -193,8 +191,7 @@ function showPic(n) {
   if (slideIndex < 1) {slideIndex = slideshowElems.length}
 
   // Set all slides to hidden
-  var i;
-  for (i = 0; i < slideshowElems.length; i++) {
+  for (var i = 0; i < slideshowElems.length; i++) {
     slideshowElems[i].style.display = "none";
   }
 
