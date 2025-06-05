@@ -204,10 +204,9 @@
       <tr>
         <td>
           <span id="searchBar">
-            <input type="text" id="inputText" placeholder="Enter text">
-            <select id="inputVenue">
+            <input type="text" id="inputText" placeholder="Enter text" title="Search text"/>
+            <select id="inputVenue" title="Venue list">
               <option value="">Select venue</option>
-              <option value=""></option>
               <option value="ACL_Live_at_Moody_Theater_in_Austin_TX">ACL Live at Moody Theater</option>
               <option value="Alamodome_in_San_Antonio_TX">Alamodome</option>
               <option value="AT%5Bamp%5DT_Center_in_San_Antonio_TX">AT&T Center</option>
@@ -232,8 +231,8 @@
               <option value="Toyota_Center_in_Houston_TX">Toyota Center</option>
               <option value="Verizon_Theatre_in_Grand_Prairie_TX">Verizon Theatre</option>
             </select>
-            <button onclick="slideshowSearch()">&#x1F50D;</button>
-            <span id="searchResults"><b>&nbsp;(? photos)</b></span>
+            <button onclick="slideshowSearch()" id="buttonSearch" title="Search">&#x1F50D;</button>
+            <span id="searchResults"></span>
           </span>
         </td>
       </tr>
@@ -265,7 +264,7 @@
       // when it runs
 
       // Initialize search results
-      document.getElementById("searchResults").innerHTML = "&nbsp;<b>(?/" + all_slides.length + " photos)</b>";
+      // document.getElementById("searchResults").innerHTML = "&nbsp;<b>(?/" + all_slides.length + " photos)</b>";
 
       // Allow for search via query parameter
       if ("URLSearchParams" in window) {
