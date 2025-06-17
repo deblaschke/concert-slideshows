@@ -49,6 +49,8 @@ button {
   width: 2em;
   height: 2em;
   box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.3);
+  padding-inline-start: 0;
+  padding-inline-end: 0;
 }
 
 #slideName {
@@ -65,9 +67,8 @@ button {
   font-weight: bold;
   text-align: center;
   vertical-align: middle;
-  display: block;
+  display: none;
   text-wrap: wrap;
   text-shadow: 3px 3px 3px rgba(255, 255, 255, 0.4);
   background-color: rgba(0, 0, 0, 0.75);
-  display: none;
 }
