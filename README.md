@@ -23,7 +23,7 @@ with "REO Speedwagon" as the artist.
 
 The slideshows have been tested on the following browsers:
 - Firefox on Windows and macOS
-- Chrome on Windows, macOS and Android (NOTE: Not responsive on mobile devices)
+- Chrome on Windows, macOS and Android (NOTE: Not perfectly responsive on mobile devices)
 - Internet Explorer on Windows (NOTE: Might need to allow blocked content)
 - Safari on macOS
 - Edge on Windows
