@@ -1,4 +1,4 @@
-const all_slides = [
+var all_slides = [
   { "dir" : "2012-13", "file" : "20120503_G1070960-Roger_Waters", "venue" : "Frank_Erwin_Center_in_Austin_TX", "style" : "width:95%;height:71%;" },
   { "dir" : "2012-13", "file" : "20120503_G1070964-Roger_Waters", "venue" : "Frank_Erwin_Center_in_Austin_TX", "style" : "width:95%;height:71%;" },
   { "dir" : "2012-13", "file" : "20120503_G1070982-Roger_Waters", "venue" : "Frank_Erwin_Center_in_Austin_TX", "style" : "width:95%;height:71%;" },
