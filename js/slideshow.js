@@ -6,6 +6,8 @@ var SLIDESHOW_INTERVAL = 3000;
 var SLIDESHOW_AUDIO = false;
 // Indicates concert date (null indicates none)
 var SLIDESHOW_DATE = null;
+// Default audio clip
+var SLIDESHOW_AUDIO_CLIP = "media/audio.mp3";
 
 // Current slide index
 var slideIndex;
@@ -146,7 +148,7 @@ function changePic(n) {
       clearInterval(slideshowTimeout);
       slideshowTimeout = setInterval(slideshow, SLIDESHOW_INTERVAL);
 
-      if (slideshowSound != null) {
+      if (slideshowSound != null && !slideshowSound.src.includes(SLIDESHOW_AUDIO_CLIP)) {
         // Load silent audio clip and clear song title if user backed up past beginning of song,
         // otherwise play audio
         if (songSlideCount < 0) {
@@ -161,7 +163,7 @@ function changePic(n) {
       // Slideshow paused
 
       // Load silent audio clip and clear song title if user backed up past beginning of song
-      if (songSlideCount < 0) {
+      if (songSlideCount < 0 && slideshowSound != null && !slideshowSound.src.includes(SLIDESHOW_AUDIO_CLIP)) {
         playAudio("media/silence.mp3", false);
         document.getElementById("slideSong").innerHTML = "&nbsp;";
       }
@@ -287,7 +289,7 @@ window.onload = function() {
   if (SLIDESHOW_AUDIO) {
     if (typeof(mapSlideToAudio) !== 'object' || MANUAL_SLIDESHOW) {
       // Play default audio
-      playAudio("media/audio.mp3", true);
+      playAudio(SLIDESHOW_AUDIO_CLIP, true);
 
       // Change music credit (last slide) if it exists
       var audioCredit = slideshowElems[slideshowElems.length-1].src;
