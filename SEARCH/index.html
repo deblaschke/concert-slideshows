@@ -63,6 +63,16 @@
         return msg;
       }
 
+      // slideshowSearchHelp opens window with helping information
+      function slideshowSearchHelp() {
+        // Get parent window position
+        var xParent = window.screenX || window.screenLeft;
+        var yParent = window.screenY || window.screenTop;
+
+        // Open child (help) window relative to parent
+        window.open("SEARCH/help.html", "_blank", `width=500,height=400,left=${xParent+100},top=${yParent+100},resizable=true,menubar=no,toolbar=no,status=no`);
+      }
+
       // slideshowSearch runs slideshow based on filterd search results
       function slideshowSearch() {
         // Start with all available slides
@@ -192,6 +202,17 @@
           imgElem.className = "concertPix";
           imgElem.style = "width:95%;height:71%;";
           targetElement.appendChild(imgElem);
+          if (SLIDESHOW_AUDIO) {
+            imgElem = document.createElement('img');
+            imgElem.src = "images/theend3.jpg";
+            imgElem.alt = "Credit";
+            imgElem.className = "concertPix";
+            imgElem.style = "width:95%;height:71%;";
+            targetElement.appendChild(imgElem);
+
+            // Play default audio
+            // playAudio("media/audio.mp3", true);
+          }
 
           // Set number of slides in search results
           document.getElementById("searchResults").innerHTML = "&nbsp;<b>(" + filtered_slides.length + "/" + all_slides.length + " photos)</b>";
@@ -231,6 +252,7 @@
               <option value="Cadence_Bank_Center_in_Belton_TX">Cadence Bank Center</option>
               <option value="Cedar_Park_Center_in_Cedar_Park_TX">Cedar Park Center</option>
               <option value="Cynthia_Woods_Mitchell_Pavilion_in_The_Woodlands_TX">Cynthia Woods Pavilion</option>
+              <option value="Dickies_Arena_in_Fort_Worth_TX">Dickies Arena</option>
               <option value="Frank_Erwin_Center_in_Austin_TX">Frank Erwin Center</option>
               <option value="Freeman_Coliseum_in_San_Antonio_TX">Freeman Coliseum</option>
               <option value="Frost_Bank_Center_in_San_Antonio_TX">Frost Bank Center</option>
@@ -247,6 +269,7 @@
               <option value="Verizon_Theatre_in_Grand_Prairie_TX">Verizon Theatre</option>
             </select>
             <button onclick="slideshowSearch()" id="buttonSearch" title="Search">&#x1F50D;</button>
+<!--        <button onclick="slideshowSearchHelp()" id="buttonHelp" title="Help" style="padding: 0;"><font size="+1" color="blue">&#9432;</font></button> -->
             <span id="searchResults"></span>
           </span>
         </td>
