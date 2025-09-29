@@ -6,8 +6,6 @@ var SLIDESHOW_INTERVAL = 3000;
 var SLIDESHOW_AUDIO = false;
 // Indicates concert date (null indicates none)
 var SLIDESHOW_DATE = null;
-// Default audio clip
-var SLIDESHOW_AUDIO_CLIP = "media/audio.mp3";
 
 // Current slide index
 var slideIndex;
@@ -19,10 +17,6 @@ var slideshowSound = null;
 var slideshowElems = document.getElementsByClassName("concertPix");
 // Indicates if mobile device (if not detected, default behavior occurs which is acceptable)
 var isMobileDevice = false;
-// Map slide names to audio clips (initialized in slideshow.html)
-// var mapSlideToAudio = new Map([]);
-// Slide count for current audio clip (pause audio if count goes negative due to user interaction)
-var songSlideCount = 0;
 
 // Allow for override of default behavior in URL via query parameters
 if ("URLSearchParams" in window) {
@@ -49,6 +43,72 @@ if ("URLSearchParams" in window) {
   if (/^\d{8}$/.test(urlParam)) {
     SLIDESHOW_DATE = urlParam;
   }
+}
+
+// getDescription returns description for regular slide
+function getDescription(path) {
+  var result = "";
+
+  // path is of format "*/file.jpg"
+  // file is of format "yyyymmdd_picture-description"
+
+  // Process valid paths (must have directory separator and .jpg extension)
+  path = decodeURI(path);
+  var index = path.lastIndexOf('/');
+  if (index >= 0 && path.lastIndexOf('.jpg') > index) {
+    var file = path.substring(index + 1, path.lastIndexOf('.'));
+
+    // File begins with "yyyymmdd_" for slides
+    if (/^[0-9]{8}[_T]{1}/.test(file)) {
+      var date = file.substring(0, 8);
+
+      if (/^[0-9]{8}_[C-Z]{1}[0-9]{7}/.test(file)) {
+        // Found digital camera picture name ("yyyymmdd_Annnnnnn")
+        result = file.substring(9, 17);
+        index = 17;
+      } else if (/^[0-9]{8}T[0-9]{6}/.test(file)) {
+        // Found cell phone camera picture name ("yyyymmddTnnnnnn")
+        result = file.substring(0, 8) + file.substring(9, 15);
+        index = 15;
+      }
+
+      // Continue processing if recognized picture name
+      if (result.length > 0) {
+        // Handle description if present
+        index = file.indexOf('-', index);
+        if (index >= 0) {
+          // Picture description is everything after "-"
+          var desc = file.substring(index + 1);
+
+          // Replace underscores with spaces
+          result = result + " - " + desc.replace(/_/g, ' ');
+
+          // Replace at sign with English
+          result = result.replace(/@/g, " at ");
+
+          // Replace special characters ("[*]") with HTML entity names ("&*;")
+          index = file.indexOf('[');
+          if (index >= 0 && index < file.indexOf(']')) {
+            result = result.replace(/\[/g, '&');
+            result = result.replace(/\]/g, ';');
+          }
+        }
+
+        // Add date on separate line
+        result = result + "<BR>("
+                   + ["January","February","March","April","May","June","July","August","September","October","November","December"].at(date.substring(4, 6) - 1) + " "
+                   + (date.charAt(6) == '0' ? date.charAt(7) : date.substring(6, 8)) + ", "
+                   + date.substring(0, 4) + ")";
+      }
+    }
+  }
+
+  // Display space to occupy slideName span if description empty
+  if (result.length == 0) {
+    result = "&nbsp;<BR>&nbsp;";
+  }
+
+  return result;
 }
 
 // playAudio creates audio object where path is audio clip path and start indicates whether
@@ -148,25 +208,11 @@ function changePic(n) {
       clearInterval(slideshowTimeout);
       slideshowTimeout = setInterval(slideshow, SLIDESHOW_INTERVAL);
 
-      if (slideshowSound != null && !slideshowSound.src.includes(SLIDESHOW_AUDIO_CLIP)) {
-        // Load silent audio clip and clear song title if user backed up past beginning of song,
-        // otherwise play audio
-        if (songSlideCount < 0) {
-          slideshowSound.pause();
-          playAudio("media/silence.mp3", false);
-          document.getElementById("slideSong").innerHTML = "&nbsp;";
-        } else {
+      if (slideshowSound != null) {
           slideshowSound.play();
-        }
       }
     } else {
-      // Slideshow paused
-
-      // Load silent audio clip and clear song title if user backed up past beginning of song
-      if (songSlideCount < 0 && slideshowSound != null && !slideshowSound.src.includes(SLIDESHOW_AUDIO_CLIP)) {
-        playAudio("media/silence.mp3", false);
-        document.getElementById("slideSong").innerHTML = "&nbsp;";
-      }
+      // Slideshow paused, nothing to do
     }
   } else {
     // Manual slideshow
@@ -180,7 +226,6 @@ function changePic(n) {
 
 // showPic displays slide where n is change to slideIndex
 function showPic(n) {
-  songSlideCount += n;
   slideIndex += n;
 
   // Reduce slideshow to specific date (one time only)
@@ -209,26 +254,14 @@ function showPic(n) {
     document.getElementById("slideSong").innerHTML = "&nbsp;";
   }
 
-  // Change audio based on slide name
-  if (SLIDESHOW_AUDIO && !MANUAL_SLIDESHOW && typeof(mapSlideToAudio) === 'object') {
-    // Slide description contains " - " whereas title/credits do not
-    var index = description.trim().indexOf(' ');
-    if (index != -1) {
-      // Change audio if slide in mapSlideToAudio
-      var slideName = description.substring(0, index);
-      if (mapSlideToAudio.has(slideName)) {
-        var mapObj = mapSlideToAudio.get(slideName);
-        playAudio(mapObj.file, slideshowTimeout != null);
-        document.getElementById("slideSong").innerHTML = "&#9835; \"" + mapObj.title + "\" &#9835;";
-        songSlideCount = 0;
-      }
-    } else if (slideshowSound != null) {
-      // Pause audio during title/credits
-      slideshowSound.pause();
-
-      // Clear song title during title/credits
-      document.getElementById("slideSong").innerHTML = "&nbsp;";
-    }
+  // Change audio and song title if different from currently-playing clip
+  // NOTE: Audio source is set in image element by slideshowSearch() in SEARCH\by-search.html - the
+  // deb_audio property is NOT part of the standard definition
+  if (SLIDESHOW_AUDIO && (slideshowSound == null || !slideshowSound.src.endsWith(slideshowElems[slideIndex-1].deb_audio))) {
+    playAudio("media/" + slideshowElems[slideIndex-1].deb_audio, slideshowTimeout != null);
+    document.getElementById("slideSong").innerHTML = slideshowElems[slideIndex-1].alt == "Slide"
+      ? "&#9835; \"" +  mapAudioToName.get(slideshowElems[slideIndex-1].deb_audio) + "\" &#9835;"
+      : "&nbsp;";
   }
 }
 
@@ -286,18 +319,7 @@ window.onload = function() {
   // Don't do anything if search page
   if (window.location.pathname.includes("SEARCH")) return;
 
-  if (SLIDESHOW_AUDIO) {
-    if (typeof(mapSlideToAudio) !== 'object' || MANUAL_SLIDESHOW) {
-      // Play default audio
-      playAudio(SLIDESHOW_AUDIO_CLIP, true);
-
-      // Change music credit (last slide) if it exists
-      var audioCredit = slideshowElems[slideshowElems.length-1].src;
-      if (audioCredit.indexOf("theend3") != -1) {
-        slideshowElems[slideshowElems.length-1].src = audioCredit.replace("theend3", "theend3-audio");
-      }
-    }
-  } else {
+  if (!SLIDESHOW_AUDIO) {
     // Remove music credit (last slide) if it exists
     var audioCredit = slideshowElems[slideshowElems.length-1].src;
     if (audioCredit.indexOf("theend3") != -1) {

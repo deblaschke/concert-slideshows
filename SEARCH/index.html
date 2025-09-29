@@ -6,8 +6,7 @@
     <title>Concert Slideshows Search</title>
     <link rel="stylesheet" href="css/slideshow.css">
     <script src="js/slideshow.js"></script>
-    <script src="js/description.js"></script>
-    <script src="SEARCH/all_slides.js"></script>
+    <script src="js/all_slides.js"></script>
     <style media="screen">
       input, select {
         font-family: Arial;
@@ -44,12 +43,12 @@
       }
     </style>
     <script>
+      // Maximum allowed search results
+      // var MAXIMUM_SEARCH_RESULT = 1500;
+
       // Make sure audio is disabled
       SLIDESHOW_AUDIO = false;
       SLIDESHOW_INTERVAL = 3000;
-
-      // Maximum allowed search results
-      var MAXIMUM_SEARCH_RESULT = 1500;
 
       // getSearchError returns user error, which is base[+text][+venue]
       function getSearchError(base, venue, text) {
@@ -74,9 +73,14 @@
       }
 
       // slideshowSearch runs slideshow based on filterd search results
-      function slideshowSearch() {
+      function slideshowSearch(period) {
         // Start with all available slides
         var filtered_slides = all_slides;
+
+        // Filter slides based on period, if provided (IUO)
+        if (period != null && period != "All") {
+          filtered_slides = filtered_slides.filter(slide => slide.dir == period);
+        }
 
         // Filter slides based on venue, if provided
         var venue = null;
@@ -148,7 +152,7 @@
         }
 
         // No search criteria, issue error
-        else if (venue == null && text == null) {
+        else if (venue == null && text == null && period == null) {
           alert(getSearchError("No search criteria", venue, text));
         }
 
@@ -158,9 +162,9 @@
         }
 
         // Too many search results, issue error
-        else if (filtered_slides.length > MAXIMUM_SEARCH_RESULT) {
-          alert(getSearchError("Too many search results (" + filtered_slides.length + ")", venue, text));
-        }
+        // else if (filtered_slides.length > MAXIMUM_SEARCH_RESULT) {
+        //  alert(getSearchError("Too many search results (" + filtered_slides.length + ")", venue, text));
+        // }
 
         // Search results just right, start slideshow
         else {
@@ -173,10 +177,11 @@
 
           // Add title to slideshow
           var imgElem = document.createElement('img');
-          imgElem.src = "SEARCH/title.jpg";
+          imgElem.src = period == null ? "SEARCH/title.jpg" : (period == "All" ? "MULTIYR/title-all.jpg" : (period + "/title.jpg"));
           imgElem.alt = "Title";
           imgElem.className = "concertPix";
           imgElem.style = "width:95%;height:71%;";
+          if (SLIDESHOW_AUDIO) imgElem.deb_audio = "silence.mp3";
           targetElement.appendChild(imgElem);
 
           // Add matching slides to slideshow
@@ -186,6 +191,7 @@
             imgElem.alt = 'Slide';
             imgElem.className = 'concertPix';
             imgElem.style = slide.style;
+            if (SLIDESHOW_AUDIO) imgElem.deb_audio = slide.audio;
             targetElement.appendChild(imgElem);
           });
 
@@ -195,12 +201,14 @@
           imgElem.alt = "Credit";
           imgElem.className = "concertPix";
           imgElem.style = "width:95%;height:71%;";
+          if (SLIDESHOW_AUDIO) imgElem.deb_audio = "silence.mp3";
           targetElement.appendChild(imgElem);
           imgElem = document.createElement('img');
           imgElem.src = "images/theend2.jpg";
           imgElem.alt = "Credit";
           imgElem.className = "concertPix";
           imgElem.style = "width:95%;height:71%;";
+          if (SLIDESHOW_AUDIO) imgElem.deb_audio = "silence.mp3";
           targetElement.appendChild(imgElem);
           if (SLIDESHOW_AUDIO) {
             imgElem = document.createElement('img');
@@ -208,10 +216,14 @@
             imgElem.alt = "Credit";
             imgElem.className = "concertPix";
             imgElem.style = "width:95%;height:71%;";
+            imgElem.deb_audio = "silence.mp3";
             targetElement.appendChild(imgElem);
+          }
 
-            // Play default audio
-            // playAudio("media/audio.mp3", true);
+          // Change title text and hide search bar if period provided (IUO)
+          if (period != null) {
+            document.getElementById("slideTitle").innerHTML = period + " Concerts";
+            document.getElementById("searchRow").style.display= 'none';
           }
 
           // Set number of slides in search results
@@ -230,14 +242,13 @@
     </script>
   </head>
   <body>
-    </table>
     <table id="outerTable">
       <tr>
         <td>
           <span id="slideTitle">Concert Slideshows Search</span>
         </td>
       </tr>
-      <tr>
+      <tr id="searchRow">
         <td>
           <span id="searchBar">
             <input type="text" id="inputText" placeholder="Enter text" title="Search text">
@@ -301,12 +312,10 @@
       // Code is placed here so that the necessary elements (searchResults, etc.) have been defined
       // when it runs
 
-      // Initialize search results
-      // document.getElementById("searchResults").innerHTML = "&nbsp;<b>(?/" + all_slides.length + " photos)</b>";
-
-      // Allow for search via query parameter
+      // Allow for search via query parameters
       if ("URLSearchParams" in window) {
         var inputText = null;
+        var inputPeriod = null;
         var urlParams = new URLSearchParams(window.location.search);
 
         // Handle search text query parameter
@@ -320,10 +329,23 @@
           }
         }
 
-        // Run slideshow if valid query parameter
-        if (inputText != null) {
-          document.getElementById("inputText").value = inputText;
-          slideshowSearch();
+        // Handle search period query parameter (IUO)
+        urlParam = urlParams.get('period');
+        if (urlParam != null) {
+          if (["All", "2012-13", "2014-15", "2016-17", "2018-19", "2021-23", "2024-25"].includes(urlParam)) {
+            inputPeriod = urlParam;
+          } else {
+            alert("Invalid period=\"" + urlParam + "\", ignored");
+            inputPeriod = null;
+          }
+        }
+
+        // Run slideshow if valid query parameters
+        if (inputText != null || inputPeriod != null) {
+          if (inputText != null) {
+            document.getElementById("inputText").value = inputText;
+          }
+          slideshowSearch(inputPeriod);
         }
       }
     </script>
