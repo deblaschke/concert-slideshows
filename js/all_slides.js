@@ -4,7 +4,6 @@ var all_slides = [
   { "dir" : "2012-13", "file" : "20120503_G1070982-Roger_Waters", "venue" : "Frank_Erwin_Center_in_Austin_TX", "audio" : "waters1.mp3", "style" : "width:95%;height:71%;" },
   { "dir" : "2012-13", "file" : "20120503_G1080000-Roger_Waters", "venue" : "Frank_Erwin_Center_in_Austin_TX", "audio" : "waters1.mp3", "style" : "width:95%;height:71%;" },
   { "dir" : "2012-13", "file" : "20120503_G1080017-Roger_Waters", "venue" : "Frank_Erwin_Center_in_Austin_TX", "audio" : "waters1.mp3", "style" : "width:95%;height:71%;" },
-  { "dir" : "2012-13", "file" : "20120503_G1080028-Roger_Waters", "venue" : "Frank_Erwin_Center_in_Austin_TX", "audio" : "waters1.mp3", "style" : "width:95%;height:71%;" },
   { "dir" : "2012-13", "file" : "20120503_G1080054-Roger_Waters", "venue" : "Frank_Erwin_Center_in_Austin_TX", "audio" : "waters1.mp3", "style" : "width:95%;height:71%;" },
   { "dir" : "2012-13", "file" : "20120503_G1080061-Roger_Waters", "venue" : "Frank_Erwin_Center_in_Austin_TX", "audio" : "waters1.mp3", "style" : "width:95%;height:71%;" },
   { "dir" : "2012-13", "file" : "20120503_G1080072-Roger_Waters", "venue" : "Frank_Erwin_Center_in_Austin_TX", "audio" : "waters1.mp3", "style" : "height:95%;width:71%;" },

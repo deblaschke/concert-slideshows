@@ -6,6 +6,8 @@ var SLIDESHOW_INTERVAL = 3000;
 var SLIDESHOW_AUDIO = false;
 // Indicates concert date (null indicates none)
 var SLIDESHOW_DATE = null;
+// Indicates number of slides to preload before initiating slideshow (remainder loaded asynchronously)
+var SLIDESHOW_PRELOAD = 10;
 
 // Current slide index
 var slideIndex;
@@ -138,6 +140,73 @@ function playAudio(path, start) {
     if (promise != null) {
       promise.catch(function(error) { });
     }
+  }
+}
+
+// preloadSlideshow adds title and preloaded slides to slideshow
+function preloadSlideshow(targetElement, period, filtered_slides) {
+  // Add title to slideshow
+  var imgElem = document.createElement('img');
+  imgElem.src = period == null ? "SEARCH/title.jpg" : (period == "All" ? "MULTIYR/title-all.jpg" : (period + "/title.jpg"));
+  imgElem.alt = "Title";
+  imgElem.className = "concertPix";
+  imgElem.style = "width:95%;height:71%;";
+  if (SLIDESHOW_AUDIO) imgElem.deb_audio = "silence.mp3";
+  targetElement.appendChild(imgElem);
+
+  // Add initial matching slides to slideshow
+  var numPreload = filtered_slides.length > SLIDESHOW_PRELOAD ? SLIDESHOW_PRELOAD : filtered_slides.length;
+  for (var i = 0; i < numPreload; i++) {
+    var slide = filtered_slides[i];
+    imgElem = document.createElement('img');
+    imgElem.src = slide.dir + "/" + slide.file + "@" + slide.venue + ".jpg";
+    imgElem.alt = 'Slide';
+    imgElem.className = 'concertPix';
+    imgElem.style = slide.style;
+    if (SLIDESHOW_AUDIO) imgElem.deb_audio = slide.audio;
+    targetElement.appendChild(imgElem);
+  }
+}
+
+// loadSlideshow asynchronously adds non-preloaded slides and credits to slideshow
+async function loadSlideshow(targetElement, filtered_slides) {
+  var imgElem;
+
+  // Add matching slides to slideshow, if any
+  for (var i = SLIDESHOW_PRELOAD; i < filtered_slides.length; i++) {
+    var slide = filtered_slides[i];
+    imgElem = document.createElement('img');
+    imgElem.src = slide.dir + "/" + slide.file + "@" + slide.venue + ".jpg";
+    imgElem.alt = 'Slide';
+    imgElem.className = 'concertPix';
+    imgElem.style = slide.style;
+    if (SLIDESHOW_AUDIO) imgElem.deb_audio = slide.audio;
+    targetElement.appendChild(imgElem);
+  }
+
+  // Add credits to slideshow
+  imgElem = document.createElement('img');
+  imgElem.src = "images/theend1.jpg";
+  imgElem.alt = "Credit";
+  imgElem.className = "concertPix";
+  imgElem.style = "width:95%;height:71%;";
+  if (SLIDESHOW_AUDIO) imgElem.deb_audio = "silence.mp3";
+  targetElement.appendChild(imgElem);
+  imgElem = document.createElement('img');
+  imgElem.src = "images/theend2.jpg";
+  imgElem.alt = "Credit";
+  imgElem.className = "concertPix";
+  imgElem.style = "width:95%;height:71%;";
+  if (SLIDESHOW_AUDIO) imgElem.deb_audio = "silence.mp3";
+  targetElement.appendChild(imgElem);
+  if (SLIDESHOW_AUDIO) {
+    imgElem = document.createElement('img');
+    imgElem.src = "images/theend3.jpg";
+    imgElem.alt = "Credit";
+    imgElem.className = "concertPix";
+    imgElem.style = "width:95%;height:71%;";
+    if (SLIDESHOW_AUDIO) imgElem.deb_audio = "silence.mp3";
+    targetElement.appendChild(imgElem);
   }
 }
 

@@ -46,10 +46,6 @@
       // Maximum allowed search results
       // var MAXIMUM_SEARCH_RESULT = 1500;
 
-      // Make sure audio is disabled
-      SLIDESHOW_AUDIO = false;
-      SLIDESHOW_INTERVAL = 3000;
-
       // getSearchError returns user error, which is base[+text][+venue]
       function getSearchError(base, venue, text) {
         var msg = base;
@@ -175,50 +171,11 @@
             targetElement.removeChild(targetElement.lastChild);
           }
 
-          // Add title to slideshow
-          var imgElem = document.createElement('img');
-          imgElem.src = period == null ? "SEARCH/title.jpg" : (period == "All" ? "MULTIYR/title-all.jpg" : (period + "/title.jpg"));
-          imgElem.alt = "Title";
-          imgElem.className = "concertPix";
-          imgElem.style = "width:95%;height:71%;";
-          if (SLIDESHOW_AUDIO) imgElem.deb_audio = "silence.mp3";
-          targetElement.appendChild(imgElem);
+          // Synchronously add title and preloaded slides to slideshow
+          preloadSlideshow(targetElement, period, filtered_slides);
 
-          // Add matching slides to slideshow
-          filtered_slides.forEach(function(slide) {
-            imgElem = document.createElement('img');
-            imgElem.src = slide.dir + "/" + slide.file + "@" + slide.venue + ".jpg";
-            imgElem.alt = 'Slide';
-            imgElem.className = 'concertPix';
-            imgElem.style = slide.style;
-            if (SLIDESHOW_AUDIO) imgElem.deb_audio = slide.audio;
-            targetElement.appendChild(imgElem);
-          });
-
-          // Add credits to slideshow
-          imgElem = document.createElement('img');
-          imgElem.src = "images/theend1.jpg";
-          imgElem.alt = "Credit";
-          imgElem.className = "concertPix";
-          imgElem.style = "width:95%;height:71%;";
-          if (SLIDESHOW_AUDIO) imgElem.deb_audio = "silence.mp3";
-          targetElement.appendChild(imgElem);
-          imgElem = document.createElement('img');
-          imgElem.src = "images/theend2.jpg";
-          imgElem.alt = "Credit";
-          imgElem.className = "concertPix";
-          imgElem.style = "width:95%;height:71%;";
-          if (SLIDESHOW_AUDIO) imgElem.deb_audio = "silence.mp3";
-          targetElement.appendChild(imgElem);
-          if (SLIDESHOW_AUDIO) {
-            imgElem = document.createElement('img');
-            imgElem.src = "images/theend3.jpg";
-            imgElem.alt = "Credit";
-            imgElem.className = "concertPix";
-            imgElem.style = "width:95%;height:71%;";
-            imgElem.deb_audio = "silence.mp3";
-            targetElement.appendChild(imgElem);
-          }
+          // Asynchronously add non-preloaded slides and credits to slideshow
+          loadSlideshow(targetElement, filtered_slides);
 
           // Change title text and hide search bar if period provided (IUO)
           if (period != null) {
