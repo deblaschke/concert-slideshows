@@ -179,6 +179,7 @@
 
           // Change title text and hide search bar if period provided (IUO)
           if (period != null) {
+            document.title = period + " Concerts";
             document.getElementById("slideTitle").innerHTML = period + " Concerts";
             document.getElementById("searchRow").style.display= 'none';
           }
