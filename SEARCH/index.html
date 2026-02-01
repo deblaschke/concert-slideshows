@@ -269,6 +269,12 @@
     <script>
       // Code is placed here so that the necessary elements (searchResults, etc.) have been defined
       // when it runs
+      document.getElementById("inputText").addEventListener("keydown", (event) => {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          slideshowSearch();
+        }
+      });
 
       // Allow for search via query parameters
       if ("URLSearchParams" in window) {
@@ -290,7 +296,7 @@
         // Handle search period query parameter (IUO)
         urlParam = urlParams.get('period');
         if (urlParam != null) {
-          if (["All", "2012-13", "2014-15", "2016-17", "2018-19", "2021-23", "2024-25"].includes(urlParam)) {
+          if (["All", "2012-13", "2014-15", "2016-17", "2018-19", "2021-23", "2024-25", "2026-27"].includes(urlParam)) {
             inputPeriod = urlParam;
           } else {
             alert("Invalid period=\"" + urlParam + "\", ignored");
