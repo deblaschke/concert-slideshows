@@ -1782,7 +1782,7 @@ var all_slides = [
   { "dir" : "2024-25", "file" : "20250610_Q1000205C-Sheryl_Crow", "venue" : "Red_Rocks_Amphitheatre_in_Morrison_CO", "audio" : "crow.mp3", "style" : "width:95%;height:71%;" },
   { "dir" : "2024-25", "file" : "20250610_Q1000236-Sheryl_Crow_with_Larkin_Poe", "venue" : "Red_Rocks_Amphitheatre_in_Morrison_CO", "audio" : "crow.mp3", "style" : "width:95%;height:71%;" },
   { "dir" : "2024-25", "file" : "20250610_Q1000266C-Sheryl_Crow", "venue" : "Red_Rocks_Amphitheatre_in_Morrison_CO", "audio" : "crow.mp3", "style" : "width:95%;height:71%;" },
-  { "dir" : "2024-25", "file" : "20250610_Q1000273C-Sheryl_Crow_with_Larkin_Poe", "venue" : "Red_Rocks_Amphitheatre_in_Morrison_CO", "audio" : "crow.mp3", "style" : "width:95%;height:71%;" },
+  { "dir" : "2024-25", "file" : "20250610_Q1000273C-Sheryl_Crow", "venue" : "Red_Rocks_Amphitheatre_in_Morrison_CO", "audio" : "crow.mp3", "style" : "width:95%;height:71%;" },
   { "dir" : "2024-25", "file" : "20250610_Q1000275C-Sheryl_Crow", "venue" : "Red_Rocks_Amphitheatre_in_Morrison_CO", "audio" : "crow.mp3", "style" : "height:95%;width:71%;" },
   { "dir" : "2024-25", "file" : "20250610_Q1000311C-Sheryl_Crow", "venue" : "Red_Rocks_Amphitheatre_in_Morrison_CO", "audio" : "crow.mp3", "style" : "width:95%;height:71%;" },
   { "dir" : "2024-25", "file" : "20250610_Q1000319C-Sheryl_Crow_with_Larkin_Poe", "venue" : "Red_Rocks_Amphitheatre_in_Morrison_CO", "audio" : "crow.mp3", "style" : "width:95%;height:71%;" },
