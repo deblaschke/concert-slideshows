@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <base href="..">
+    <title>Concert Slideshows Search Help</title>
+    <link rel="stylesheet" href="css/slideshow.css">
+    <style media="screen">
+      body {
+        background-image: none;
+      }
+      .no-break {
+        white-space: nowrap;
+      }
+      .font-size-1 {
+        font-size: small;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="outerTable">
+      <tr>
+        <td>
+          <span id="slideTitle">Concert Slideshows Search Help</span>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: left;">
+          <p>
+            Search for slides by entering an artist in the search text <span class="no-break">and/or</span> selecting a venue from the <span class="no-break">drop-down</span> list followed by clicking the search button (<span class="font-size-1">&#x1F50D;</span>).
+            An exclamation mark (!) as the first character in the search text indicates negation, i.e. matches all artists NOT containing the search text.
+            Searches are NOT <span class="no-break">case-sensitive</span> and can include whitespace to match multiple words (in order) within the artists' names.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: left;">
+          <p>
+            For example, to search for slides from Linkin Park, type <b><span class="no-break">"link park"</span></b> in the search text and click the search button.
+            To search for slides from Moody Center that aren't Linkin Park, type <b><span class="no-break">"!link park"</span></b> in the search text, select <b>Moody Center</b> from the <span class="no-break">drop-down</span> list, and click the search button.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">
+          <p>
+            <button onclick="window.close()" id="buttonExit" title="Exit help" style="padding: 0;">&#x274c;</button>
+          </p>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

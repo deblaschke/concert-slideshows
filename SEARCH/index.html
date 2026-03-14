@@ -53,7 +53,7 @@
           msg = msg + " for text=\"" + text + "\"";
         }
         if (venue != null) {
-          msg = msg + " in venue=\"" + venue.replace(/_/g, ' ') + "\"";
+          msg = msg + " in venue=\"" + venue.replace(/_/g, " ") + "\"";
         }
         return msg;
       }
@@ -130,7 +130,7 @@
                }
 
                // Perform case-insensitive search
-               regexObj = new RegExp(regexPattern, 'i');
+               regexObj = new RegExp(regexPattern, "i");
                if (negativeSearch) {
                  filtered_slides = filtered_slides.filter(slide => !regexObj.test(slide.file));
                } else {
@@ -181,7 +181,7 @@
           if (period != null) {
             document.title = period + " Concerts";
             document.getElementById("slideTitle").innerHTML = period + " Concerts";
-            document.getElementById("searchRow").style.display= 'none';
+            document.getElementById("searchRow").style.display= "none";
           }
 
           // Set number of slides in search results
@@ -209,7 +209,7 @@
       <tr id="searchRow">
         <td>
           <span id="searchBar">
-            <input type="text" id="inputText" placeholder="Enter text" title="Search text">
+            <input type="text" id="inputText" placeholder="Enter text" title="Search text" autofocus>
             <select id="inputVenue" title="Venue list">
               <option value="">Select venue</option>
               <option value="ACL_Live_at_Moody_Theater_in_Austin_TX">ACL Live at Moody Theater</option>
@@ -270,7 +270,7 @@
       // Code is placed here so that the necessary elements (searchResults, etc.) have been defined
       // when it runs
       document.getElementById("inputText").addEventListener("keydown", (event) => {
-        if (event.key === 'Enter') {
+        if (event.key === "Enter") {
           event.preventDefault();
           slideshowSearch();
         }
@@ -283,7 +283,7 @@
         var urlParams = new URLSearchParams(window.location.search);
 
         // Handle search text query parameter
-        var urlParam = urlParams.get('text');
+        var urlParam = urlParams.get("text");
         if (urlParam != null) {
           if (/^!?[0-9A-Za-z\s]+$/.test(urlParam)) {
             inputText = urlParam;
@@ -294,7 +294,7 @@
         }
 
         // Handle search period query parameter (IUO)
-        urlParam = urlParams.get('period');
+        urlParam = urlParams.get("period");
         if (urlParam != null) {
           if (["All", "2012-13", "2014-15", "2016-17", "2018-19", "2021-23", "2024-25", "2026-27"].includes(urlParam)) {
             inputPeriod = urlParam;

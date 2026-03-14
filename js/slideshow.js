@@ -23,25 +23,25 @@ var isMobileDevice = false;
 // Allow for override of default behavior in URL via query parameters
 if ("URLSearchParams" in window) {
   var urlParams = new URLSearchParams(window.location.search);
-  var urlParam = urlParams.get('mode');
-  if (urlParam === 'manual') {
+  var urlParam = urlParams.get("mode");
+  if (urlParam === "manual") {
     MANUAL_SLIDESHOW = true;
   }
-  urlParam = urlParams.get('interval');
+  urlParam = urlParams.get("interval");
   if (/^\d+$/.test(urlParam)) {
     SLIDESHOW_INTERVAL = parseInt(urlParam, 10);
 
     // Audio clips set up for maximum interval of five seconds
     if (SLIDESHOW_AUDIO && SLIDESHOW_INTERVAL > 5000) {
-      alert('Specified interval (' + SLIDESHOW_INTERVAL + ') too large, setting to 5000');
+      alert("Specified interval (" + SLIDESHOW_INTERVAL + ") too large, setting to 5000");
       SLIDESHOW_INTERVAL = 5000;
     }
   }
-  urlParam = urlParams.get('audio');
-  if (urlParam === 'off') {
+  urlParam = urlParams.get("audio");
+  if (urlParam === "off") {
     SLIDESHOW_AUDIO = false;
   }
-  urlParam = urlParams.get('date');
+  urlParam = urlParams.get("date");
   if (/^\d{8}$/.test(urlParam)) {
     SLIDESHOW_DATE = urlParam;
   }
@@ -56,9 +56,9 @@ function getDescription(path) {
 
   // Process valid paths (must have directory separator and .jpg extension)
   path = decodeURI(path);
-  var index = path.lastIndexOf('/');
-  if (index >= 0 && path.lastIndexOf('.jpg') > index) {
-    var file = path.substring(index + 1, path.lastIndexOf('.'));
+  var index = path.lastIndexOf("/");
+  if (index >= 0 && path.lastIndexOf(".jpg") > index) {
+    var file = path.substring(index + 1, path.lastIndexOf("."));
 
     // File begins with "yyyymmdd_" for slides
     if (/^[0-9]{8}[_T]{1}/.test(file)) {
@@ -77,22 +77,22 @@ function getDescription(path) {
       // Continue processing if recognized picture name
       if (result.length > 0) {
         // Handle description if present
-        index = file.indexOf('-', index);
+        index = file.indexOf("-", index);
         if (index >= 0) {
           // Picture description is everything after "-"
           var desc = file.substring(index + 1);
 
           // Replace underscores with spaces
-          result = result + " - " + desc.replace(/_/g, ' ');
+          result = result + " - " + desc.replace(/_/g, " ");
 
           // Replace at sign with English
           result = result.replace(/@/g, " at ");
 
           // Replace special characters ("[*]") with HTML entity names ("&*;")
-          index = file.indexOf('[');
-          if (index >= 0 && index < file.indexOf(']')) {
-            result = result.replace(/\[/g, '&');
-            result = result.replace(/\]/g, ';');
+          index = file.indexOf("[");
+          if (index >= 0 && index < file.indexOf("]")) {
+            result = result.replace(/\[/g, "&");
+            result = result.replace(/\]/g, ";");
           }
         }
 
@@ -125,10 +125,10 @@ function playAudio(path, start) {
   slideshowSound = new Audio(path);
 
   // Set audio object to loop
-  if (typeof slideshowSound.loop == 'boolean') {
+  if (typeof slideshowSound.loop == "boolean") {
     slideshowSound.loop = true;
   } else {
-    slideshowSound.addEventListener('ended', function() {
+    slideshowSound.addEventListener("ended", function() {
       this.currentTime = 0;
       this.play();
     }, false);
@@ -143,28 +143,29 @@ function playAudio(path, start) {
   }
 }
 
+// createImgElement creates image element (HTMLImageElement instance)
+function createImgElement(src, alt, style, audio) {
+  var imgElem = document.createElement("img");
+  imgElem.src = src;
+  imgElem.alt = alt;
+  imgElem.className = "concertPix";
+  imgElem.style = style;
+  if (audio != null) imgElem.deb_audio = audio;
+  return imgElem;
+}
+
 // preloadSlideshow adds title and preloaded slides to slideshow
 function preloadSlideshow(targetElement, period, filtered_slides) {
   // Add title to slideshow
-  var imgElem = document.createElement('img');
-  imgElem.src = period == null ? "SEARCH/title.jpg" : (period == "All" ? "MULTIYR/title-all.jpg" : (period + "/title.jpg"));
-  imgElem.alt = "Title";
-  imgElem.className = "concertPix";
-  imgElem.style = "width:95%;height:71%;";
-  if (SLIDESHOW_AUDIO) imgElem.deb_audio = "silence.mp3";
-  targetElement.appendChild(imgElem);
+  targetElement.appendChild(createImgElement(period == null ? "SEARCH/title.jpg" : (period == "All" ? "MULTIYR/title-all.jpg" : (period + "/title.jpg")),
+    "Title", "width:95%;height:71%;", SLIDESHOW_AUDIO ? "silence.mp3" : null));
 
   // Add initial matching slides to slideshow
   var numPreload = filtered_slides.length > SLIDESHOW_PRELOAD ? SLIDESHOW_PRELOAD : filtered_slides.length;
   for (var i = 0; i < numPreload; i++) {
     var slide = filtered_slides[i];
-    imgElem = document.createElement('img');
-    imgElem.src = slide.dir + "/" + slide.file + "@" + slide.venue + ".jpg";
-    imgElem.alt = 'Slide';
-    imgElem.className = 'concertPix';
-    imgElem.style = slide.style;
-    if (SLIDESHOW_AUDIO) imgElem.deb_audio = slide.audio;
-    targetElement.appendChild(imgElem);
+    targetElement.appendChild(createImgElement(slide.dir + "/" + slide.file + "@" + slide.venue + ".jpg",
+      "Slide", slide.style, SLIDESHOW_AUDIO ? slide.audio : null));
   }
 }
 
@@ -175,38 +176,18 @@ async function loadSlideshow(targetElement, filtered_slides) {
   // Add matching slides to slideshow, if any
   for (var i = SLIDESHOW_PRELOAD; i < filtered_slides.length; i++) {
     var slide = filtered_slides[i];
-    imgElem = document.createElement('img');
-    imgElem.src = slide.dir + "/" + slide.file + "@" + slide.venue + ".jpg";
-    imgElem.alt = 'Slide';
-    imgElem.className = 'concertPix';
-    imgElem.style = slide.style;
-    if (SLIDESHOW_AUDIO) imgElem.deb_audio = slide.audio;
-    targetElement.appendChild(imgElem);
+    targetElement.appendChild(createImgElement(slide.dir + "/" + slide.file + "@" + slide.venue + ".jpg",
+      "Slide", slide.style, SLIDESHOW_AUDIO ? slide.audio : null));
   }
 
   // Add credits to slideshow
-  imgElem = document.createElement('img');
-  imgElem.src = "images/theend1.jpg";
-  imgElem.alt = "Credit";
-  imgElem.className = "concertPix";
-  imgElem.style = "width:95%;height:71%;";
-  if (SLIDESHOW_AUDIO) imgElem.deb_audio = "silence.mp3";
-  targetElement.appendChild(imgElem);
-  imgElem = document.createElement('img');
-  imgElem.src = "images/theend2.jpg";
-  imgElem.alt = "Credit";
-  imgElem.className = "concertPix";
-  imgElem.style = "width:95%;height:71%;";
-  if (SLIDESHOW_AUDIO) imgElem.deb_audio = "silence.mp3";
-  targetElement.appendChild(imgElem);
+  targetElement.appendChild(createImgElement("images/theend1.jpg",
+    "Credit", "width:95%;height:71%;", SLIDESHOW_AUDIO ? "silence.mp3" : null));
+  targetElement.appendChild(createImgElement("images/theend2.jpg",
+    "Credit", "width:95%;height:71%;", SLIDESHOW_AUDIO ? "silence.mp3" : null));
   if (SLIDESHOW_AUDIO) {
-    imgElem = document.createElement('img');
-    imgElem.src = "images/theend3.jpg";
-    imgElem.alt = "Credit";
-    imgElem.className = "concertPix";
-    imgElem.style = "width:95%;height:71%;";
-    if (SLIDESHOW_AUDIO) imgElem.deb_audio = "silence.mp3";
-    targetElement.appendChild(imgElem);
+    targetElement.appendChild(createImgElement("images/theend3.jpg",
+      "Credit", "width:95%;height:71%;", "silence.mp3"));
   }
 }
 
@@ -215,9 +196,9 @@ function reduceSlideshow() {
   // Start at end so that remove() does not affect index
   for (var i = slideshowElems.length - 1; i > -1; i--) {
     var path = slideshowElems[i].src;
-    var index = path.lastIndexOf('/');
-    if (index >= 0 && path.lastIndexOf('.jpg') > index) {
-      var file = path.substring(index + 1, path.lastIndexOf('.'));
+    var index = path.lastIndexOf("/");
+    if (index >= 0 && path.lastIndexOf(".jpg") > index) {
+      var file = path.substring(index + 1, path.lastIndexOf("."));
       if (/^[0-9]{8}/.test(file) && (!file.startsWith(SLIDESHOW_DATE))) {
         slideshowElems[i].remove();
       }
@@ -347,13 +328,13 @@ function slideshow() {
 // Handle left arrow, right arrow and pause keys
 document.onkeydown = function(event) {
   switch (event.key) {
-    case 'ArrowLeft':
+    case "ArrowLeft":
       changePic(-1);
       break;
-    case 'ArrowRight':
+    case "ArrowRight":
       changePic(1);
       break;
-    case 'Escape':
+    case "Escape":
       if (!MANUAL_SLIDESHOW) {
         toggleFlow(document.getElementById("buttonPlayPause"));
       }
@@ -376,11 +357,11 @@ function setPicDimensions() {
   }
 
   // Set innerTable dimensions (a square) to smallest dimension
-  document.getElementById("innerTable").style.width = minDim + 'px';
-  document.getElementById("innerTable").style.height = minDim + 'px';
+  document.getElementById("innerTable").style.width = minDim + "px";
+  document.getElementById("innerTable").style.height = minDim + "px";
 
   // Set slideName width to smaller than innerTable width
-  document.getElementById("slideName").style.width = (minDim-2) + 'px';
+  document.getElementById("slideName").style.width = (minDim-2) + "px";
 }
 
 // Handle window load
@@ -411,15 +392,5 @@ document.addEventListener("DOMContentLoaded", (event) => {
   // Hide song title if unused
   if (MANUAL_SLIDESHOW || !SLIDESHOW_AUDIO) {
     document.getElementById("slideSong").style.display = "none";
-  }
-
-  // Initiate slideshow if not search page
-  if (!window.location.pathname.includes("SEARCH")) {
-    if (MANUAL_SLIDESHOW) {
-      hidePlayButton();
-      showPic(1);
-    } else {
-      slideshow();
-    }
   }
 });
