@@ -155,9 +155,9 @@ function createImgElement(src, alt, style, audio) {
 }
 
 // preloadSlideshow adds title and preloaded slides to slideshow
-function preloadSlideshow(targetElement, period, filtered_slides) {
+function preloadSlideshow(targetElement, period, comp, filtered_slides) {
   // Add title to slideshow
-  targetElement.appendChild(createImgElement(period == null ? "SEARCH/title.jpg" : (period == "All" ? "MULTIYR/title-all.jpg" : (period + "/title.jpg")),
+  targetElement.appendChild(createImgElement(comp != null ? "MULTIYR/title_" + comp + ".jpg" : (period == null ? "SEARCH/title.jpg" : (period == "All" ? "MULTIYR/title_all.jpg" : (period + "/title.jpg"))),
     "Title", "width:95%;height:71%;", SLIDESHOW_AUDIO ? "silence.mp3" : null));
 
   // Add initial matching slides to slideshow

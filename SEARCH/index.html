@@ -69,7 +69,7 @@
       }
 
       // slideshowSearch runs slideshow based on filterd search results
-      function slideshowSearch(period) {
+      function slideshowSearch(period, comp) {
         // Start with all available slides
         var filtered_slides = all_slides;
 
@@ -172,7 +172,7 @@
           }
 
           // Synchronously add title and preloaded slides to slideshow
-          preloadSlideshow(targetElement, period, filtered_slides);
+          preloadSlideshow(targetElement, period, comp, filtered_slides);
 
           // Asynchronously add non-preloaded slides and credits to slideshow
           loadSlideshow(targetElement, filtered_slides);
@@ -181,6 +181,12 @@
           if (period != null) {
             document.title = period + " Concerts";
             document.getElementById("slideTitle").innerHTML = period + " Concerts";
+            document.getElementById("searchRow").style.display= "none";
+          }
+          // Change title text and hide search bar if compilation (IUO)
+          else if (comp != null) {
+            document.title = document.getElementById("inputText").value;
+            document.getElementById("slideTitle").innerHTML = document.getElementById("inputText").value;
             document.getElementById("searchRow").style.display= "none";
           }
 
@@ -280,6 +286,7 @@
       if ("URLSearchParams" in window) {
         var inputText = null;
         var inputPeriod = null;
+        var inputComp = null;
         var urlParams = new URLSearchParams(window.location.search);
 
         // Handle search text query parameter
@@ -304,12 +311,46 @@
           }
         }
 
+        // Handle undocumented compilations query parameter
+        urlParam = urlParams.get("comp");
+        if (urlParam != null) {
+          inputComp = urlParam;
+
+          switch (urlParam) {
+            case "muse":
+              inputText = "Muse";
+              break;
+            case "britfloyd":
+              inputText = "Brit Floyd";
+              break;
+            case "offspring":
+              inputText = "The Offspring";
+              break;
+            case "30seconds":
+              inputText = "30 Seconds to Mars";
+              break;
+            case "reo":
+              inputText = "REO Speedwagon";
+              break;
+            case "scorpions":
+              inputText = "Scorpions";
+              break;
+            case "styx":
+              inputText = "Styx";
+              break;
+            default:
+              inputComp = null;
+              alert("Invalid comp=\"" + urlParam + "\", ignored");
+              break;
+          }
+        }
+
         // Run slideshow if valid query parameters
-        if (inputText != null || inputPeriod != null) {
+        if (inputText != null || inputPeriod != null || inputComp != null) {
           if (inputText != null) {
             document.getElementById("inputText").value = inputText;
           }
-          slideshowSearch(inputPeriod);
+          slideshowSearch(inputPeriod, inputComp);
         }
       }
     </script>
