@@ -236,6 +236,7 @@
               <option value="Grey_Eagle_Resort_%5Bamp%5D_Casino_in_Calgary_AB">Grey Eagle Resort</option>
               <option value="H-E-B_Center_in_Cedar_Park_TX">H-E-B Center</option>
               <option value="Intuit_Dome_in_Inglewood_CA">Intuit Dome</option>
+              <option value="Moody_Amphitheater_at_Waterloo_Park_in_Austin_TX">Moody Amphitheater at Waterloo Park</option>
               <option value="Moody_Center_in_Austin_TX">Moody Center</option>
               <option value="Red_Rocks_Amphitheatre_in_Morrison_CO">Red Rocks Amphitheatre</option>
               <option value="Smart_Financial_Centre_in_Sugar_Land_TX">Smart Financial Centre</option>
@@ -314,34 +315,22 @@
         // Handle undocumented compilations query parameter
         urlParam = urlParams.get("comp");
         if (urlParam != null) {
+          var compMap = new Map([
+            [ "muse", "Muse" ],
+            [ "britfloyd", "Brit Floyd" ],
+            [ "offspring", "The Offspring" ],
+            [ "30seconds", "30 Seconds to Mars" ],
+            [ "reo", "REO Speedwagon" ],
+            [ "scorpions", "Scorpions" ],
+            [ "styx", "Styx" ],
+          ]);
           inputComp = urlParam;
 
-          switch (urlParam) {
-            case "muse":
-              inputText = "Muse";
-              break;
-            case "britfloyd":
-              inputText = "Brit Floyd";
-              break;
-            case "offspring":
-              inputText = "The Offspring";
-              break;
-            case "30seconds":
-              inputText = "30 Seconds to Mars";
-              break;
-            case "reo":
-              inputText = "REO Speedwagon";
-              break;
-            case "scorpions":
-              inputText = "Scorpions";
-              break;
-            case "styx":
-              inputText = "Styx";
-              break;
-            default:
-              inputComp = null;
-              alert("Invalid comp=\"" + urlParam + "\", ignored");
-              break;
+          if (compMap.has(urlParam)) {
+            inputText = compMap.get(urlParam);
+          } else {
+            inputComp = null;
+            alert("Invalid comp=\"" + urlParam + "\", ignored");
           }
         }
 
