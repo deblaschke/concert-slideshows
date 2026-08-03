@@ -2067,7 +2067,6 @@ var all_slides = [
   { "dir" : "2026-27", "file" : "20260801_Q1050257C-Dogstar", "venue" : "ACL_Live_at_Moody_Theater_in_Austin_TX", "audio" : "dogstar.mp3", "style" : "height:95%;width:71%;" },
   { "dir" : "2026-27", "file" : "20260801_Q1050264-Dogstar", "venue" : "ACL_Live_at_Moody_Theater_in_Austin_TX", "audio" : "dogstar.mp3", "style" : "width:95%;height:71%;" },
   { "dir" : "2026-27", "file" : "20260801_Q1050284-Dogstar", "venue" : "ACL_Live_at_Moody_Theater_in_Austin_TX", "audio" : "dogstar.mp3", "style" : "width:95%;height:71%;" },
-  { "dir" : "2026-27", "file" : "20260801_Q1050289-Dogstar", "venue" : "ACL_Live_at_Moody_Theater_in_Austin_TX", "audio" : "dogstar.mp3", "style" : "width:95%;height:71%;" },
   { "dir" : "2026-27", "file" : "20260801_Q1050299C-Dogstar", "venue" : "ACL_Live_at_Moody_Theater_in_Austin_TX", "audio" : "dogstar.mp3", "style" : "height:95%;width:71%;" },
   { "dir" : "2026-27", "file" : "20260801_Q1050340C-Dogstar", "venue" : "ACL_Live_at_Moody_Theater_in_Austin_TX", "audio" : "dogstar.mp3", "style" : "width:95%;height:71%;" },
   { "dir" : "2026-27", "file" : "20260801_Q1050358C-Dogstar", "venue" : "ACL_Live_at_Moody_Theater_in_Austin_TX", "audio" : "dogstar.mp3", "style" : "width:95%;height:71%;" },
